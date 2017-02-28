@@ -1,7 +1,1 @@
-#
-# ~/.bash_profile
-#
-
-[[ -f ~/.env ]] && . ~/.env
-
-echo opaaaaaaaaaaaaaaaaaa
+[[ -f ~/Projects/shell/dotfiles/.bashrc ]] && . ~/Projects/shell/dotfiles/.bashrc
