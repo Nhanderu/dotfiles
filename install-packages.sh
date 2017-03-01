@@ -1,2 +1,3 @@
-code --install-extension Go
-code --install-extension theme-darktooth
+# Install Visual Studio Code extensions.
+code --install-extension lukehoban.Go
+code --install-extension Poorchop.theme-darktooth
