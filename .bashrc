@@ -1,1 +1,1 @@
-[[ -f ~/Projects/shell/dotfiles/.env ]] && . ~/Projects/shell/dotfiles/.env
+[[ -f ~/Projects/shell/dotfiles/env.sh ]] && . ~/Projects/shell/dotfiles/env.sh
