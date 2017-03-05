@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export PS1='[\u@\h \W]\$ '
 export BROWSER=/usr/bin/chromium
 export EDITOR=/usr/bin/nano
