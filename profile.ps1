@@ -38,5 +38,5 @@ set-alias touch create-emptyfile
 set-alias grep select-string
 
 # time
-function Measure-Function ($fn) { measure-command { & $fn } }
+function Measure-Function ($fn) { (measure-command { & $fn }).ticks }
 set-alias time measure-function
