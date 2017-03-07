@@ -5,7 +5,6 @@ yaourt -S --noconfirm \
     aur/spotify \
     aur/stremio-bin \
     aur/visual-studio-code \
-    community/chromium \
     community/go \
     community/mongodb \
     community/rtorrent \
