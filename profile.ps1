@@ -40,3 +40,11 @@ set-alias grep select-string
 # time
 function Measure-Function ($fn) { (measure-command { & $fn }).ticks }
 set-alias time measure-function
+
+# compram
+function Compare-ProgramsMemoryUsage {
+    foreach ($browser in $args) {
+        echo ("$browser  {0:N2}MB " -f ((ps "$browser" | measure PM -Sum).sum / 1mb))
+    }
+}
+set-alias compram compare-programsmemoryusage
