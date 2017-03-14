@@ -1,4 +1,5 @@
 yaourt -S --noconfirm \
+    antergos/vivaldi \
     aur/android-studio \
     aur/dotnet-bin \
     aur/popcorntime \
@@ -9,7 +10,9 @@ yaourt -S --noconfirm \
     community/mongodb \
     community/rtorrent \
     extra/chromium \
+    extra/libva-vdpau-driver \
     extra/mariadb \
+    extra/qt4 \
     extra/vlc \
     multilib/steam
 
