@@ -1,6 +1,7 @@
 yaourt -S --noconfirm \
     antergos/vivaldi \
     aur/android-studio \
+    aur/discord \
     aur/dotnet-bin \
     aur/popcorntime \
     aur/spotify \
