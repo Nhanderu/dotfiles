@@ -5,6 +5,7 @@ yaourt -S --noconfirm \
     aur/popcorntime \
     aur/spotify \
     aur/stremio-bin \
+    aur/tor-browser \
     aur/visual-studio-code \
     community/go \
     community/mongodb \
