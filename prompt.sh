@@ -54,34 +54,24 @@ check_git() {
 }
 
 tput sgr0; # reset colors
-bold=$(tput bold);
-reset=$(tput sgr0);
-black=$(tput setaf 0);
-blue=$(tput setaf 33);
-cyan=$(tput setaf 37);
-green=$(tput setaf 64);
-orange=$(tput setaf 166);
-purple=$(tput setaf 125);
-red=$(tput setaf 124);
-violet=$(tput setaf 61);
-white=$(tput setaf 15);
-yellow=$(tput setaf 136);
 
-# Highlight the user name when logged in as root.
-if [[ "${USER}" == "root" ]]; then
-	userStyle="${red}";
-else
-	userStyle="${green}";
-fi;
+reset=$(tput sgr0);
+important=$(tput bold);
+normal=$(tput setaf 15);
+
+username=$(tput setaf 64);
+path=$(tput setaf 100);
+branch=$(tput setaf 214);
+gitinfo=$(tput setaf 208);
 
 # Set the terminal title and prompt.
 PS1="\[\033]0;\W\007\]"; # working directory base name
-PS1+="\[${bold}\]\[${userStyle}\]\u"; # username
-PS1+="\[${white}\] in ";
-PS1+="\[${yellow}\]\w"; # working directory full path
-PS1+="\$(check_git \"\[${white}\] on \[${violet}\]\" \"\[${blue}\]\")"; # Git repository details
+PS1+="\[${important}\]\[${username}\]\u\[${reset}\]"; # username (in vomit green)
+PS1+="\[${normal}\] in "; # "in" word, in white
+PS1+="\[${important}\]\[${path}\]\w\[${reset}\]"; # working directory full path
+PS1+="\$(check_git \"\[${normal}\] on \[${branch}\]\" \"\[${gitinfo}\]\")"; # Git repository details
 PS1+="\n";
-PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
+PS1+="\[${reset}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
