@@ -3,9 +3,16 @@
 dotfiles=~/Projects/shell/dotfiles
 
 # Executes dotfiles entrypoint script.
-for file in {env,prompt,functions}; do
+for file in {env,functions}; do
     if [[ test -f "$dotfiles/$file.sh" ]]; then
         source "$dotfiles/$file.sh"
+    fi
+done
+
+# Executes dotfiles' subpackages entrypoint scripts.
+for dir in {prompt}; do
+    if [[ test -f "$dotfiles/$dir/entry.sh" ]]; then
+        source "$dotfiles/$dir/entry.sh"
     fi
 done
 
