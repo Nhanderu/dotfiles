@@ -53,7 +53,8 @@ check_git() {
 	fi;
 }
 
-tput sgr0; # reset colors
+# Resets colors.
+tput sgr0; 
 
 reset=$(tput sgr0);
 important=$(tput bold);
@@ -64,15 +65,29 @@ path=$(tput setaf 100);
 branch=$(tput setaf 214);
 gitinfo=$(tput setaf 208);
 
-# Set the terminal title and prompt.
-PS1="\[\033]0;\W\007\]"; # working directory base name
-PS1+="\[${important}\]\[${username}\]\u\[${reset}\]"; # username (in vomit green)
-PS1+="\[${normal}\] in "; # "in" word, in white
-PS1+="\[${important}\]\[${path}\]\w\[${reset}\]"; # working directory full path
-PS1+="\$(check_git \"\[${normal}\] on \[${branch}\]\" \"\[${gitinfo}\]\")"; # Git repository details
-PS1+="\n";
-PS1+="\[${reset}\]\$ \[${reset}\]"; # `$` (and reset color)
-export PS1;
+# Sets the terminal title and prompt.
 
-PS2="\[${yellow}\]→ \[${reset}\]";
+# Working directory base name.
+PS1="\[\033]0;\W\007\]";
+
+# Username (in normal green).
+PS1+="\[${important}\]\[${username}\]\u\[${reset}\]";
+
+# "in" word (in white).
+PS1+="\[${normal}\] in ";
+
+# Working directory full path (in vomit green).
+PS1+="\[${important}\]\[${path}\]\w\[${reset}\]";
+
+# Git repository details (in green/yellow).
+PS1+="\$(check_git \"\[${normal}\] on \[${branch}\]\" \"\[${gitinfo}\]\")";
+
+# Line break.
+PS1+="\n";
+
+# Command line.
+PS1+="\[${reset}\]→ \[${reset}\]";
+PS2="\[${reset}\]→ \[${reset}\]";
+
+export PS1;
 export PS2;
