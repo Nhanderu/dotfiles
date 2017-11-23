@@ -66,9 +66,10 @@ branch=$(tput setaf 214);
 gitinfo=$(tput setaf 208);
 
 # Sets the terminal title and prompt.
+PS1="\n"
 
 # Working directory base name.
-PS1="\[\033]0;\W\007\]";
+PS1+="\[\033]0;\W\007\]";
 
 # Username (in normal green).
 PS1+="\[${important}\]\[${username}\]\u\[${reset}\]";
