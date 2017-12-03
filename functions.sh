@@ -6,7 +6,17 @@ clean_docker () {
         --volume /etc:/etc:ro \
         spotify/docker-gc
 
-    docker stop $(docker ps -a -q)
-    docker rm --force $(docker ps -a -q)
-    docker rmi --force $(docker images -q)
+    containers=$(docker ps -a -q)
+    if [[ "$containers" != "" ]]; then
+        docker stop $containers
+        docker rm --force $containers
+    fi
+    unset containers
+
+    images=$(docker images -q)
+    if [[ "$images" != "" ]]; then
+        docker rmi --force $images
+    fi
+    unset images
+
 }
