@@ -1,0 +1,1 @@
+export RV="$GOPATH/src/github.com/RedVentures"
