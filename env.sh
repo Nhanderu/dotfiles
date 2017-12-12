@@ -7,3 +7,4 @@ export PROJ="$HOME/Projects"
 export GOPATH="$PROJ/go"
 
 export PATH+=":$GOPATH/bin"
+export PATH+=":$DOTFILES/cmd"
