@@ -1,4 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+
+#
+# Executes in every new Terminal session.
+#
 
 dotfiles=~/projects/shell/dotfiles
 
