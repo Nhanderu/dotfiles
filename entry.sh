@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles=~/Projects/shell/dotfiles
+dotfiles=~/projects/shell/dotfiles
 
 # Executes dotfiles entrypoint script.
 for file in {env,functions,}; do

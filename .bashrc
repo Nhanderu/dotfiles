@@ -1,1 +1,1 @@
-[[ -f ~/Projects/shell/dotfiles/entry.sh ]] && . ~/Projects/shell/dotfiles/entry.sh
+[[ -f ~/projects/shell/dotfiles/entry.sh ]] && . ~/projects/shell/dotfiles/entry.sh
