@@ -1,7 +1,14 @@
 current_sh="bash"
+base_path=$(dirname "$0")
 
-for file in ~/projects/shell/dotfiles/sh/$current_sh/.*; do
-    ln -sfv $file ~
+sh_files=$(ls -A $base_path/sh/$current_sh/)
+for file in $sh_files; do
+    ln -sfv $base_path/sh/$current_sh/$file ~
 done
 
-ln -sfv ~/projects/shell/dotfiles/.rtorrent.rc ~
+config_files="
+    .rtorrent.rc
+"
+for file in $config_files; do
+    ln -sfv $base_path/$file ~
+done
