@@ -11,8 +11,8 @@ if [ -z "$DISPLAY" ] && \
     startx
 fi
 
-monitor_left=HDMI-2
-monitor_right=HDMI-1-1
+monitor_left="HDMI-2"
+monitor_right="HDMI-1-1"
 
 xrandr \
     --output $monitor_left \
