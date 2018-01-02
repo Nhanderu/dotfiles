@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 export BROWSER=$(which firefox)
 export EDITOR=$(which nano)
 export TERMINAL=$(which alacritty)

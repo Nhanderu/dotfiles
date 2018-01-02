@@ -4,13 +4,11 @@
 # Executes during boot.
 #
 
-if [ -z "$DISPLAY" ] && \
-    [ -n "$XDG_VTNR" ] && \
-    [ "$XDG_VTNR" -eq 1 ]; then
+# Sets environment variables.
+dotfiles="$HOME/projects/shell/dotfiles"
+source $dotfiles/env.sh
 
-    startx
-fi
-
+# Configures monitors.
 monitor_left="HDMI-2"
 monitor_right="HDMI-1-1"
 
@@ -26,3 +24,11 @@ xrandr \
 
 unset monitor_left
 unset monitor_right
+
+# Starts XOrg.
+if [ -z "$DISPLAY" ] && \
+    [ -n "$XDG_VTNR" ] && \
+    [ "$XDG_VTNR" -eq 1 ]; then
+
+    startx
+fi

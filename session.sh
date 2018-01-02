@@ -4,17 +4,15 @@
 # Executes in every new Terminal session.
 #
 
-# Executes dotfiles entrypoint script.
-for file in {env,functions,}; do
-    if [[ -f "$DOTFILES/$file.sh" ]]; then
-        source "$DOTFILES/$file.sh"
-    fi
-done
+# Sets environment variables.
+dotfiles="$HOME/projects/shell/dotfiles"
+source $dotfiles/env.sh
 
 # Executes dotfiles' subpackages entrypoint scripts.
 for dir in {prompt,}; do
-    if [[ -f "$DOTFILES/$dir/entry.sh" ]]; then
-        source "$DOTFILES/$dir/entry.sh"
+    entry="$DOTFILES/$dir/entry.sh"
+    if [[ -f "$entry" ]]; then
+        source "$entry"
     fi
 done
 
