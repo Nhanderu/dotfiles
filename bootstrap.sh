@@ -1,5 +1,5 @@
 current_sh="bash"
-base_path=$(dirname "$0")
+base_path=$(realpath "$(dirname "$0")")
 
 sh_files=$(ls -A $base_path/sh/$current_sh/)
 for file in $sh_files; do
