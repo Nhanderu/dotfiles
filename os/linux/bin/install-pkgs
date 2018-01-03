@@ -43,6 +43,7 @@ yaourt -S --noconfirm \
 # Installs Arch packages: other tools.
 yaourt -S --noconfirm \
     community/rtorrent \
+    community/telegram-desktop \
     extra/vlc \
     multilib/steam \
     multilib/steam-native-runtime
