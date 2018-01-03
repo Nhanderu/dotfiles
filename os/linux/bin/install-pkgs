@@ -1,43 +1,47 @@
 #!/usr/bin/env sh
 
-# Installs Arch packages.
+# Installs Arch packages: X11 stuff.
 yaourt -S --noconfirm \
-
-    # X11 stuff.
     extra/xorg-server \
     extra/xorg-xinit \
-    extra/xorg-xrandr \
+    extra/xorg-xrandr
 
-    # Current window manager.
+# Installs Arch packages: current window manager.
+yaourt -S --noconfirm \
     community/i3-gaps \
     community/i3-wm \
-    community/i3block \
+    community/i3blocks \
     community/i3lock \
     community/i3status \
-    community/dmenu \
+    community/dmenu
 
-    # Terminals.
+# Installs Arch packages: terminals.
+yaourt -S --noconfirm \
     aur/alacritty-scrollback-git \
-    extra/xterm \
+    extra/xterm
 
-    # Programming languages.
+# Installs Arch packages: programming languages.
+yaourt -S --noconfirm \
     extra/go \
     community/nodejs \
     community/npm \
     community/rust \
     community/rust-docs \
     community/rustfmt \
-    community/rustup \
+    community/rustup
 
-    # Editors.
+# Installs Arch packages: editors.
+yaourt -S --noconfirm \
     aur/visual-studio-code-bin \
-    community/neovim \
+    community/neovim
 
-    # Browsers.
+# Installs Arch packages: browsers.
+yaourt -S --noconfirm \
     extra/firefox \
-    aur/tor-browser \
+    aur/tor-browser
 
-    # Other tools.
+# Installs Arch packages: other tools.
+yaourt -S --noconfirm \
     community/rtorrent \
     extra/vlc \
     multilib/steam \
