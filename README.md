@@ -9,9 +9,11 @@ My own dotfiles. Yay.
 mkdir --parents ~/projects/shell/dotfiles
 cd ~/projects/shell/dotfiles
 git clone https://github.com/Nhanderu/dotfiles.git .
+
+# Installs configurations and scripts.
 ./bootstrap.sh
 
-# Install my packages.
+# Installs my packages.
 install-pkgs
 
 # Sets locale.
