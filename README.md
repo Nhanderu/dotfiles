@@ -2,6 +2,24 @@
 
 My own dotfiles. Yay.
 
+## Steps to glory
+
+```sh
+# Configures dotfiles.
+mkdir --parents ~/projects/shell/dotfiles
+cd ~/projects/shell/dotfiles
+git clone https://github.com/Nhanderu/dotfiles.git .
+./bootstrap.sh
+
+# Install my packages.
+install-pkgs
+
+# Sets locale.
+sudo nvim /etc/locale.gen
+sudo nvim /etc/locale.conf
+sudo locale-gen
+```
+
 ## License
 
 Almost all of this project code is in the public domain. See the [LICENSE file][2].
