@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# Installs macOS packages.
+brew install \
+    m-cli
+
+# Install packages that aren't OS-specific.
+install-general-packages

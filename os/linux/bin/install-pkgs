@@ -1,0 +1,51 @@
+#!/usr/bin/env sh
+
+# Installs Arch packages.
+yaourt -S --noconfirm \
+
+    # X11 stuff.
+    extra/xorg-server \
+    extra/xorg-xinit \
+    extra/xorg-xrandr \
+
+    # Current window manager.
+    community/i3-gaps \
+    community/i3-wm \
+    community/i3block \
+    community/i3lock \
+    community/i3status \
+    community/dmenu \
+
+    # Terminals.
+    aur/alacritty-scrollback-git \
+    extra/xterm \
+
+    # Programming languages.
+    extra/go \
+    community/nodejs \
+    community/npm \
+    community/rust \
+    community/rust-docs \
+    community/rustfmt \
+    community/rustup \
+
+    # Editors.
+    aur/visual-studio-code-bin \
+    community/neovim \
+
+    # Browsers.
+    extra/firefox \
+    aur/tor-browser \
+
+    # Other tools.
+    community/rtorrent \
+    extra/vlc \
+    multilib/steam \
+    multilib/steam-native-runtime
+    aur/discord \
+    aur/popcorntime \
+    aur/spotify \
+    aur/stremio-legacy
+
+# Install packages that aren't OS-specific.
+install-general-packages

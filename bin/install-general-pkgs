@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 # Install Visual Studio Code extensions.
 code --install-extension wmaurer.change-case
 code --install-extension Poorchop.theme-darktooth
