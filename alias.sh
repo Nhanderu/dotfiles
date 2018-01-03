@@ -1,0 +1,1 @@
+alias bootstrap-dotfiles="$DOTFILES/bootstrap.sh"

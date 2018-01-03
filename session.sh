@@ -4,9 +4,10 @@
 # Executes in every new Terminal session.
 #
 
-# Sets environment variables.
+# Sets environment variables and aliases.
 dotfiles="$HOME/projects/shell/dotfiles"
 source $dotfiles/env.sh
+source $dotfiles/alias.sh
 
 # Executes dotfiles' subpackages entrypoint scripts.
 for dir in {prompt,}; do

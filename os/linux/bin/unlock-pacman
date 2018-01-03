@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-rm -f /var/lib/pacman/db.lck 
