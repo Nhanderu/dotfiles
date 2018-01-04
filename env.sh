@@ -12,12 +12,12 @@ export XDG_DATA_HOME="$HOME/.local/share"
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 
-PATH="/usr/local/sbin"
+PATH="$DOTFILES/bin"
+PATH+=":/usr/local/sbin"
 PATH+=":/usr/local/bin"
 PATH+=":/usr/bin"
+PATH+=":$GOPATH/bin"
 PATH+=":/usr/bin/site_perl"
 PATH+=":/usr/bin/vendor_perl"
 PATH+=":/usr/bin/core_perl"
-PATH+=":$GOPATH/bin"
-PATH+=":$DOTFILES/bin"
 export PATH
