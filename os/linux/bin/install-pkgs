@@ -46,11 +46,11 @@ yaourt -S --noconfirm \
     community/telegram-desktop \
     extra/vlc \
     multilib/steam \
-    multilib/steam-native-runtime
+    multilib/steam-native-runtime \
     aur/discord \
     aur/popcorntime \
     aur/spotify \
     aur/stremio-legacy
 
 # Install packages that aren't OS-specific.
-install-general-packages
+install-general-pkgs
