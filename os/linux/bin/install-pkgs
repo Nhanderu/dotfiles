@@ -24,11 +24,7 @@ yaourt -S --noconfirm \
 yaourt -S --noconfirm \
     extra/go \
     community/nodejs \
-    community/npm \
-    community/rust \
-    community/rust-docs \
-    community/rustfmt \
-    community/rustup
+    community/npm
 
 # Installs Arch packages: editors.
 yaourt -S --noconfirm \
