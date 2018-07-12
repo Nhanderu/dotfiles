@@ -2,7 +2,8 @@
 
 # Installs macOS packages.
 brew install \
-    m-cli
+    m-cli \
+    terraform
 
 # Install packages that aren't OS-specific.
 install-general-pkgs
