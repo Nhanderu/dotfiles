@@ -5,12 +5,12 @@ export TERMINAL=$(which alacritty)
 export PROJ="$HOME/projects"
 export DOTFILES="$PROJ/shell/dotfiles"
 
-export GOPATH="$PROJ/go"
-export GOROOT="/usr/local/go"
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+
+export GOROOT="/usr/local/go"
+export GOPATH="$PROJ/go"
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
