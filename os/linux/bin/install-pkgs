@@ -45,6 +45,7 @@ yaourt -S --noconfirm \
     multilib/steam \
     multilib/steam-native-runtime \
     aur/discord \
+    aur/j4-dmenu-desktop-git \
     aur/popcorntime \
     aur/spotify \
     aur/stremio-legacy
