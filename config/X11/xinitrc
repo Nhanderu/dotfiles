@@ -16,4 +16,6 @@ xrandr \
 unset monitor_left
 unset monitor_right
 
+feh --bg-max --randomize ~/pictures/wallpapers/* &
+
 exec i3
