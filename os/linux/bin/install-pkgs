@@ -9,7 +9,6 @@ yaourt -S --noconfirm \
 # Installs Arch packages: current window manager.
 yaourt -S --noconfirm \
     community/i3-gaps \
-    community/i3-wm \
     community/i3blocks \
     community/i3lock \
     community/i3status \

@@ -11,6 +11,7 @@
 
 set $mod Mod4
 
+gaps inner 20
 
 workspace_layout tabbed
 

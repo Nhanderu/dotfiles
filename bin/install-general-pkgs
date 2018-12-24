@@ -17,3 +17,6 @@ code --install-extension mrmlnc.vscode-pugbeautify
 code --install-extension mrmlnc.vscode-puglint
 code --install-extension kalitaalexey.vscode-rust
 code --install-extension be5invis.toml
+
+# General packages.
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
