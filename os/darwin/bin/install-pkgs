@@ -2,8 +2,60 @@
 
 # Installs macOS packages.
 brew install \
+    advancecomp \
+    autoconf \
+    awscli \
+    dep \
+    docker \
+    freetype \
+    gdbm \
+    gifsicle \
+    git \
+    glide \
+    go \
+    goenv \
+    gowsdl \
+    heroku \
+    httpie \
+    hugo \
+    icu4c \
+    imagemagick \
+    jhead \
+    jpeg \
+    jpegoptim \
+    kubernetes-cli \
+    libpng \
+    libtiff \
+    libtool \
+    libyaml \
     m-cli \
-    terraform
+    mycli \
+    mysql \
+    node \
+    openssl \
+    openssl@1.1 \
+    optipng \
+    pgcli \
+    phantomjs \
+    pkg-config \
+    pngcrush \
+    pngquant \
+    postgresql \
+    python \
+    python@2 \
+    rbenv \
+    readline \
+    redis \
+    ruby \
+    ruby-build \
+    s-search \
+    selenium-server-standalone \
+    sl \
+    sqlite \
+    telnet \
+    tfenv \
+    wget \
+    xz
 
 # Install packages that aren't OS-specific.
 install-general-pkgs
