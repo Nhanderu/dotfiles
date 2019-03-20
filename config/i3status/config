@@ -1,0 +1,49 @@
+general {
+    output_format = "i3bar"
+    colors        = true
+    color_good    = "#FFFFFF"
+    color_bad     = "#FF0000"
+    interval      = 1
+}
+
+order += "volume master"
+order += "disk /"
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "load"
+order += "ethernet enp3s0"
+order += "tztime local"
+
+volume master {
+        format       = "sound %volume"
+        format_muted = "sound muted (%volume)"
+        device       = "default"
+        mixer        = "Master"
+        mixer_idx    = 0
+}
+
+disk "/" {
+    format = "hdd %used / %total (%avail)"
+}
+
+cpu_usage {
+    format = "cpu %usage (%cpu0 %cpu1 %cpu2 %cpu3)"
+}
+
+cpu_temperature 0 {
+    format = "temp %degrees°C"
+    path   = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+}
+
+load {
+    format = "load %5min"
+}
+
+ethernet enp3s0 {
+    format_up   = "net %speed"
+    format_down = "no connection"
+}
+
+tztime local {
+    format = "%Y-%m-%d %H:%M:%S"
+}
