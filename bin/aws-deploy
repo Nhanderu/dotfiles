@@ -39,7 +39,7 @@ while [[ "$BUILD_COMPLETE" != "true" ]]; do
     BUILD_COMPLETE=`echo $LIST_RESULT | sed -E 's/.*"buildComplete": ([a-z]*).*/\1/g'`
     BUILD_STATUS=`echo $LIST_RESULT | sed -E 's/.*"buildStatus": "([^"]*)".*/\1/g'`
     echo "Current status: $BUILD_STATUS"
-    sleep $POOLING_INTERVAL
+    sleep "$POOLING_INTERVAL"
 
 done
 
