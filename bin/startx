@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 #
 # Same script as the one from `xorg-xinit`, but respects XDG directories.
