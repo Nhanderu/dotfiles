@@ -16,10 +16,7 @@ if [[ "$BRANCH_NAME" == "" ]]; then
     exit 1
 fi
 
-POOLING_INTERVAL="$3"
-if [[ "$POOLING_INTERVAL" == "" ]]; then
-    POOLING_INTERVAL="2"
-fi
+POOLING_INTERVAL="${3:-2}"
 if ! [[ $POOLING_INTERVAL =~ '^[0-9]+$' ]] ; then
     POOLING_INTERVAL="2"
 fi
