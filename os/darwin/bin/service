@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+action="${1:-list}"
+possible_actions="list run start stop restart"
+if ! echo $possible_actions | xargs -n 1 echo | grep -Fxq $action; then
+    echo "Invalid action \"$action\". Should be one: $possible_actions." >&2
+    exit 1
+fi
+
+if [[ "$action" == "list" ]]; then
+    brew services list
+else
+
+    services="${@:2}"
+    if [ -z "$services" ]; then
+        services=$(brew services list | tail -n +2 | awk "{print \$1}")
+    fi
+
+    launchctl setenv PATH $PATH
+    for service in $services; do
+        brew services $action $service $SERVICES/$service.plist
+    done
+
+fi
+
+unset action
+unset possible_actions
+unset service

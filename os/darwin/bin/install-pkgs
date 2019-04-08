@@ -48,7 +48,6 @@ brew install \
     ruby \
     ruby-build \
     s-search \
-    selenium-server-standalone \
     sl \
     sqlite \
     telnet \
