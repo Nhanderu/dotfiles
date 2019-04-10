@@ -2,24 +2,21 @@
 
 PROJECT_NAME="$1"
 if [[ "$PROJECT_NAME" == "" ]]; then
-    echo "Missing project name." >&2
-    echo "Command should be:" >&2
-    echo "\taws-deploy <project name> <branch name>" >&2
+    echo    "Missing project name." >&2
+    echo    "Command should be:" >&2
+    echo -e "\taws-deploy <project name> <branch name>" >&2
     exit 1
 fi
 
 BRANCH_NAME="$2"
 if [[ "$BRANCH_NAME" == "" ]]; then
-    echo "Missing branch name." >&2
-    echo "Command should be:" >&2
-    echo "\taws-deploy <project name> <branch name>" >&2
+    echo    "Missing branch name." >&2
+    echo    "Command should be:" >&2
+    echo -e "\taws-deploy <project name> <branch name>" >&2
     exit 1
 fi
 
-POOLING_INTERVAL="$3"
-if [[ "$POOLING_INTERVAL" == "" ]]; then
-    POOLING_INTERVAL="2"
-fi
+POOLING_INTERVAL="${3:-2}"
 if ! [[ $POOLING_INTERVAL =~ '^[0-9]+$' ]] ; then
     POOLING_INTERVAL="2"
 fi
