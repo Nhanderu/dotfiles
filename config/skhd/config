@@ -1,59 +1,59 @@
 # System control.
-cmd + ctrl - q : chunkc tiling::window --close
+ctrl + cmd - q : chunkc tiling::window --close
 
 # User software control.
-cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+ctrl - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 
 # Switches window.
-cmd - left  : chunkc tiling::window --focus west
-cmd - down  : chunkc tiling::window --focus south
-cmd - up    : chunkc tiling::window --focus north
-cmd - right : chunkc tiling::window --focus east
+ctrl - left  : chunkc tiling::window --focus west
+ctrl - down  : chunkc tiling::window --focus south
+ctrl - up    : chunkc tiling::window --focus north
+ctrl - right : chunkc tiling::window --focus east
 
 # Moves window.
-cmd + shift - left  : chunkc tiling::window --warp west
-cmd + shift - down  : chunkc tiling::window --warp south
-cmd + shift - up    : chunkc tiling::window --warp north
-cmd + shift - right : chunkc tiling::window --warp east
+ctrl + shift - left  : chunkc tiling::window --warp west
+ctrl + shift - down  : chunkc tiling::window --warp south
+ctrl + shift - up    : chunkc tiling::window --warp north
+ctrl + shift - right : chunkc tiling::window --warp east
 
 # Controls window.
-cmd + alt - up    : chunkc tiling::window --grid-layout 1:1:0:0:1:1
-cmd + alt - left  : chunkc tiling::window --grid-layout 1:2:0:0:1:1
-cmd + alt - right : chunkc tiling::window --grid-layout 1:2:1:0:1:1
-cmd + alt - f     : chunkc tiling::window --toggle      fullscreen
+ctrl + alt - up    : chunkc tiling::window --grid-layout 1:1:0:0:1:1
+ctrl + alt - left  : chunkc tiling::window --grid-layout 1:2:0:0:1:1
+ctrl + alt - right : chunkc tiling::window --grid-layout 1:2:1:0:1:1
+ctrl + alt - f     : chunkc tiling::window --toggle      fullscreen
 
 # Switches workspace.
-cmd - delete : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
-cmd - 1      : chunkc tiling::desktop --focus 1
-cmd - 2      : chunkc tiling::desktop --focus 2
-cmd - 3      : chunkc tiling::desktop --focus 3
-cmd - 4      : chunkc tiling::desktop --focus 4
-cmd - 5      : chunkc tiling::desktop --focus 5
-cmd - 6      : chunkc tiling::desktop --focus 6
-cmd - 7      : chunkc tiling::desktop --focus 7
-cmd - 8      : chunkc tiling::desktop --focus 8
-cmd - 9      : chunkc tiling::desktop --focus 9
-cmd - 0      : chunkc tiling::desktop --focus 10
+ctrl - delete : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
+ctrl - 1      : chunkc tiling::desktop --focus 1
+ctrl - 2      : chunkc tiling::desktop --focus 2
+ctrl - 3      : chunkc tiling::desktop --focus 3
+ctrl - 4      : chunkc tiling::desktop --focus 4
+ctrl - 5      : chunkc tiling::desktop --focus 5
+ctrl - 6      : chunkc tiling::desktop --focus 6
+ctrl - 7      : chunkc tiling::desktop --focus 7
+ctrl - 8      : chunkc tiling::desktop --focus 8
+ctrl - 9      : chunkc tiling::desktop --focus 9
+ctrl - 0      : chunkc tiling::desktop --focus 10
 
 # Moves window to workspace.
-cmd + shift - delete : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
-cmd + shift - 1      : chunkc tiling::window --send-to-desktop 1
-cmd + shift - 2      : chunkc tiling::window --send-to-desktop 2
-cmd + shift - 3      : chunkc tiling::window --send-to-desktop 3
-cmd + shift - 4      : chunkc tiling::window --send-to-desktop 4
-cmd + shift - 5      : chunkc tiling::window --send-to-desktop 5
-cmd + shift - 6      : chunkc tiling::window --send-to-desktop 6
-cmd + shift - 7      : chunkc tiling::window --send-to-desktop 7
-cmd + shift - 8      : chunkc tiling::window --send-to-desktop 8
-cmd + shift - 9      : chunkc tiling::window --send-to-desktop 9
-cmd + shift - 0      : chunkc tiling::window --send-to-desktop 10
+ctrl + shift - delete : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
+ctrl + shift - 1      : chunkc tiling::window --send-to-desktop 1
+ctrl + shift - 2      : chunkc tiling::window --send-to-desktop 2
+ctrl + shift - 3      : chunkc tiling::window --send-to-desktop 3
+ctrl + shift - 4      : chunkc tiling::window --send-to-desktop 4
+ctrl + shift - 5      : chunkc tiling::window --send-to-desktop 5
+ctrl + shift - 6      : chunkc tiling::window --send-to-desktop 6
+ctrl + shift - 7      : chunkc tiling::window --send-to-desktop 7
+ctrl + shift - 8      : chunkc tiling::window --send-to-desktop 8
+ctrl + shift - 9      : chunkc tiling::window --send-to-desktop 9
+ctrl + shift - 0      : chunkc tiling::window --send-to-desktop 10
 
 ##
 ## Auto-generated.
 ##
 
-cmd - j : chunkc tiling::window --focus prev
-cmd - k : chunkc tiling::window --focus next
+ctrl - j : chunkc tiling::window --focus prev
+ctrl - k : chunkc tiling::window --focus next
 
 shift + alt - 0 : chunkc tiling::desktop --equalize
 shift + alt - h : chunkc tiling::window  --swap west
