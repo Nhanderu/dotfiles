@@ -14,9 +14,9 @@ scrolling:
 tabspaces: 8
 
 font:
-  normal: { family: "Inconsolata LGC" }
-  bold: { family: "Inconsolata LGC" }
-  italic: { family: "Inconsolata LGC" }
+  normal: { family: "Inconsolata" }
+  bold: { family: "Inconsolata" }
+  italic: { family: "Inconsolata" }
   size: 13.0
   offset: { x: 0, y: 0 }
   glyph_offset: { x: 0, y: 0 }
