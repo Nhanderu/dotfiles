@@ -15,11 +15,11 @@ order += "ethernet enp3s0"
 order += "tztime local"
 
 volume master {
-        format       = "sound %volume"
-        format_muted = "sound muted (%volume)"
-        device       = "default"
-        mixer        = "Master"
-        mixer_idx    = 0
+    format       = "sound %volume"
+    format_muted = "sound muted (%volume)"
+    device       = "default"
+    mixer        = "Master"
+    mixer_idx    = 0
 }
 
 disk "/" {

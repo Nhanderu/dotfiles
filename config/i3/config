@@ -1,8 +1,9 @@
 set $mod Mod4
 
 # Display configuration.
+font                pango:Inconsolata Regular 11
 gaps                inner 20
-workspace_layout    tabbed
+workspace_layout    default
 default_border      pixel 1
 focus_follows_mouse no
 
@@ -30,7 +31,7 @@ bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # Controls window.
-bindsym $mod+Alt+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # Switches workspace.
 bindsym $mod+1 workspace 1
@@ -67,29 +68,3 @@ bar {
     tray_output      primary
     separator_symbol "   "
 }
-
-##
-## Auto-generated.
-##
-
-font pango:monospace 8
-floating_modifier $mod
-bindsym $mod+h split h
-bindsym $mod+v split v
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-bindsym $mod+a focus parent
-
-mode "resize" {
-    bindsym Left  resize shrink width  10 px or 10 ppt
-    bindsym Down  resize grow   height 10 px or 10 ppt
-    bindsym Up    resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow   width  10 px or 10 ppt
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
