@@ -1,7 +1,7 @@
 current_sh="bash"
 
 # Sets environment variables.
-dotfiles="$HOME/projects/dotfiles"
+dotfiles="$HOME/projects/nhanderu/dotfiles"
 source $dotfiles/env.sh
 
 # Copies configuration files.
