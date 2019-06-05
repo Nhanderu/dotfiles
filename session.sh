@@ -5,7 +5,7 @@
 #
 
 # Sets environment variables and aliases.
-dotfiles="$HOME/projects/shell/dotfiles"
+dotfiles="$HOME/projects/dotfiles"
 source $dotfiles/env.sh
 source $dotfiles/alias.sh
 

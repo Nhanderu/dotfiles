@@ -1,1 +1,1 @@
-[[ -f $HOME/projects/shell/dotfiles/session.sh ]] && source $HOME/projects/shell/dotfiles/session.sh
+[[ -f $HOME/projects/dotfiles/session.sh ]] && source $HOME/projects/dotfiles/session.sh

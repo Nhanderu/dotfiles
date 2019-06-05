@@ -1,9 +1,9 @@
 export BROWSER=$(which firefox)
-export EDITOR=$(which nano)
+export EDITOR=$(which vim)
 export TERMINAL=$(which alacritty)
 
 export PROJ="$HOME/projects"
-export DOTFILES="$PROJ/shell/dotfiles"
+export DOTFILES="$PROJ/dotfiles"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"

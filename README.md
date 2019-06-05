@@ -6,8 +6,8 @@ My own dotfiles. Yay.
 
 ```sh
 # Configures dotfiles.
-mkdir --parents ~/projects/shell/dotfiles
-cd ~/projects/shell/dotfiles
+mkdir --parents ~/projects/dotfiles
+cd ~/projects/dotfiles
 git clone https://github.com/Nhanderu/dotfiles.git .
 
 # Installs configurations and scripts.

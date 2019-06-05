@@ -5,7 +5,7 @@
 #
 
 # Sets environment variables.
-dotfiles="$HOME/projects/shell/dotfiles"
+dotfiles="$HOME/projects/dotfiles"
 source $dotfiles/env.sh
 
 # Starts XOrg.
