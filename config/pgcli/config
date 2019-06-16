@@ -1,0 +1,2 @@
+[alias_dsn]
+gorduchinha = postgres://lkfgqzagwtkkla:3198b34d11578f47cabc86fc7cb59a80bbe4699f2bf975fb14299b6439509768@ec2-75-101-147-226.compute-1.amazonaws.com:5432/d3mepvnu36l0ku
