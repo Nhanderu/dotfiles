@@ -5,18 +5,29 @@ curl https://sh.rustup.rs --sSf | \
     sh -s -- -y --no-modify-path
 
 # Install Visual Studio Code extensions.
-code --install-extension wmaurer.change-case
 code --install-extension Poorchop.theme-darktooth
-code --install-extension PeterJausovec.vscode-docker
-code --install-extension waderyan.gitblame
-code --install-extension donjayamanne.githistory
+code --install-extension be5invis.toml
 code --install-extension codezombiech.gitignore
-code --install-extension lukehoban.go
-code --install-extension sysoev.language-stylus
+code --install-extension donjayamanne.githistory
+code --install-extension eriklynd.json-tools
+code --install-extension johnpapa.vscode-peacock
+code --install-extension kalitaalexey.vscode-rust
+code --install-extension karigari.chat
+code --install-extension mauve.terraform
 code --install-extension mrmlnc.vscode-pugbeautify
 code --install-extension mrmlnc.vscode-puglint
-code --install-extension kalitaalexey.vscode-rust
-code --install-extension be5invis.toml
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-python.python
+code --install-extension ms-vscode.Go
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension ms-vsliveshare.vsliveshare-audio
+code --install-extension ms-vsliveshare.vsliveshare-pack
+code --install-extension run-at-scale.terraform-doc-snippets
+code --install-extension rust-lang.rust
+code --install-extension sysoev.language-stylus
+code --install-extension waderyan.gitblame
+code --install-extension wmaurer.change-case
+
 
 # General packages.
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
