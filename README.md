@@ -22,6 +22,8 @@ sudo nvim /etc/locale.conf
 sudo locale-gen
 ```
 
+Enjoy!
+
 ## License
 
 Almost all of this project code is in the public domain. See the [LICENSE file][2].
