@@ -27,7 +27,3 @@ code --install-extension rust-lang.rust
 code --install-extension sysoev.language-stylus
 code --install-extension waderyan.gitblame
 code --install-extension wmaurer.change-case
-
-
-# General packages.
-bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)

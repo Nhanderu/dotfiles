@@ -11,24 +11,27 @@ yaourt -S --noconfirm \
     community/i3-gaps \
     community/i3blocks \
     community/i3lock \
-    community/i3status \
-    community/dmenu
+    aur/j4-dmenu-desktop-git \
+    aur/i3status-rust
 
 # Installs Arch packages: terminals.
 yaourt -S --noconfirm \
     aur/alacritty-scrollback-git \
+    aur/alacritty-scrollback-terminfo-git \
     extra/xterm
 
 # Installs Arch packages: programming languages.
 yaourt -S --noconfirm \
-    extra/go \
+    community/go \
     community/nodejs \
     community/npm
 
 # Installs Arch packages: editors.
 yaourt -S --noconfirm \
     aur/visual-studio-code-bin \
-    community/neovim
+    community/neovim \
+    extra/emacs \
+    core/vi
 
 # Installs Arch packages: browsers.
 yaourt -S --noconfirm \
@@ -37,17 +40,27 @@ yaourt -S --noconfirm \
 
 # Installs Arch packages: other tools.
 yaourt -S --noconfirm \
+    community/discord \
     community/rtorrent \
     community/telegram-desktop \
     extra/feh \
     extra/vlc \
     multilib/steam \
-    multilib/steam-native-runtime \
-    aur/discord \
     aur/j4-dmenu-desktop-git \
     aur/popcorntime \
     aur/spotify \
-    aur/stremio-legacy
+    aur/stremio-legacy \
+    community/xdotool \
+    extra/gimp \
+    extra/feh \
+    extra/vim \
+    extra/zip \
+    extra/unrar \
+    extra/unzip \
+    aur/aura-bin \
+    aur/heroku-cli \
+    aur/pgcli-git \
+    aur/postman
 
 # Install packages that aren't OS-specific.
 install-general-pkgs
