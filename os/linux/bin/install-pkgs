@@ -52,7 +52,7 @@ yaourt -S --noconfirm \
     aur/stremio-legacy \
     community/xdotool \
     extra/gimp \
-    extra/feh \
+    extra/nitrogen \
     extra/vim \
     extra/zip \
     extra/unrar \
