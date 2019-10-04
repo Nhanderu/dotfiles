@@ -16,8 +16,8 @@ yaourt -S --noconfirm \
 
 # Installs Arch packages: terminals.
 yaourt -S --noconfirm \
-    aur/alacritty-scrollback-git \
-    aur/alacritty-scrollback-terminfo-git \
+    community/alacritty \
+    community/alacritty-terminfo \
     extra/xterm
 
 # Installs Arch packages: programming languages.
@@ -30,33 +30,33 @@ yaourt -S --noconfirm \
 yaourt -S --noconfirm \
     aur/visual-studio-code-bin \
     community/neovim \
+    extra/vim \
     extra/emacs \
     core/vi
 
 # Installs Arch packages: browsers.
 yaourt -S --noconfirm \
-    extra/firefox \
-    aur/tor-browser
+    extra/firefox
+    # aur/tor-browser
 
 # Installs Arch packages: other tools.
 yaourt -S --noconfirm \
     community/discord \
     community/rtorrent \
     community/telegram-desktop \
+    community/xdotool \
+    community/sl \
+    # multilib/steam \
     extra/feh \
     extra/vlc \
-    multilib/steam \
-    aur/j4-dmenu-desktop-git \
-    aur/popcorntime \
-    aur/spotify \
-    aur/stremio-legacy \
-    community/xdotool \
     extra/gimp \
     extra/nitrogen \
-    extra/vim \
     extra/zip \
     extra/unrar \
     extra/unzip \
+    aur/popcorntime \
+    aur/spotify \
+    aur/stremio-legacy \
     aur/aura-bin \
     aur/heroku-cli \
     aur/pgcli-git \
