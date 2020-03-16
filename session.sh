@@ -24,3 +24,8 @@ entry="$DOTFILES/os/$current_os/entry.sh"
 if [[ -f "$entry" ]]; then
     source "$entry"
 fi
+
+# Starts tmux.
+if [ -z "$TMUX" ]; then
+    tmux attach || exec tmux new-session && exit
+fi

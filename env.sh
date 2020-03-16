@@ -1,6 +1,7 @@
 export BROWSER=$(which firefox)
 export EDITOR=$(which vim)
 export TERMINAL=$(which alacritty)
+export TERM=xterm-256color
 
 export PROJ="$HOME/projects"
 export DOTFILES="$PROJ/nhanderu/dotfiles"
