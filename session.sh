@@ -27,5 +27,5 @@ fi
 
 # Starts tmux.
 if [ -z "$TMUX" ]; then
-    tmux attach || exec tmux new-session && exit
+    tmux attach || tmux new-session && exit
 fi
