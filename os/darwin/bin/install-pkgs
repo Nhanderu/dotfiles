@@ -3,6 +3,7 @@
 set -e
 
 brew update
+
 brew install \
     awscli \
     bash \
@@ -19,5 +20,24 @@ brew install \
     sl \
     tfenv \
     tmux
+
+brew cask install \
+    alacritty \
+    discord \
+    firefox \
+    mysql-shell \
+    mysql-utilities \
+    mysqlworkbench \
+    shiba \
+    skype \
+    spectacle \
+    spotify \
+    steam \
+    teamviewer \
+    telegram-desktop \
+    virtualbox \
+    visual-studio-code \
+    vlc \
+    whatsapp
 
 install-general-pkgs
