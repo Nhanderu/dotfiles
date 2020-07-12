@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+set -e
+
+if [[ -z "$DOTFILES" ]]; then
+    >&2 echo "DOTFILES variable should be defined to bootstrap."
+    exit 1
+fi
+
+current_sh="bash"
+
+source "$DOTFILES/env.sh"
+
+cp -rp "$DOTFILES/config/." "$XDG_CONFIG_HOME"
+
+dotfiles=${DOTFILES//\//\\/}
+for file in $DOTFILES/sh/$current_sh/.$current_sh*; do
+    filename=`echo $file | rev | cut -d'/' -f 1 | rev`
+    sed "s/\%DOTFILES\%/$dotfiles/" "$file" > "$HOME/$filename"
+done
+
+find "$DOTFILES/bin" -type f -exec chmod +x {} \;

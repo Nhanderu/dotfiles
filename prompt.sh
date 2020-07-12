@@ -1,38 +1,41 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Basically copied from Mathias Bynens' dotfile:
 # https://github.com/mathiasbynens/dotfiles
+
+# In respect of the original project, this code is under its original license:
+# https://github.com/mathiasbynens/dotfiles/blob/master/LICENSE-MIT.txt
 
 check_git() {
 	local s='';
 	local branchName='';
 
 	# Check if the current directory is in a Git repository.
-	if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
+	if [ `git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}"` == '0' ]; then
 
 		# check if the current directory is in .git before running git checks
-		if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
+		if [ "`git rev-parse --is-inside-git-dir 2> /dev/null`" == 'false' ]; then
 
 			# Ensure the index is up to date.
 			git update-index --really-refresh -q &>/dev/null;
 
 			# Check for uncommitted changes in the index.
-			if ! $(git diff --quiet --ignore-submodules --cached); then
+			if ! `git diff --quiet --ignore-submodules --cached`; then
 				s+='+';
 			fi;
 
 			# Check for unstaged changes.
-			if ! $(git diff-files --quiet --ignore-submodules --); then
+			if ! `git diff-files --quiet --ignore-submodules --`; then
 				s+='!';
 			fi;
 
 			# Check for untracked files.
-			if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+			if [ -n "`git ls-files --others --exclude-standard`" ]; then
 				s+='?';
 			fi;
 
 			# Check for stashed files.
-			if $(git rev-parse --verify refs/stash &>/dev/null); then
+			if `git rev-parse --verify refs/stash &>/dev/null`; then
 				s+='$';
 			fi;
 
@@ -41,9 +44,9 @@ check_git() {
 		# Get the short symbolic ref.
 		# If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
 		# Otherwise, just give up.
-		branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+		branchName="`git symbolic-ref --quiet --short HEAD 2> /dev/null || \
 			git rev-parse --short HEAD 2> /dev/null || \
-			echo '(unknown)')";
+			echo '(unknown)'`";
 
 		[ -n "${s}" ] && s=" ${s}";
 
@@ -56,14 +59,14 @@ check_git() {
 # Resets colors.
 tput sgr0; 
 
-reset=$(tput sgr0);
-important=$(tput bold);
-normal=$(tput setaf 15);
+reset=`tput sgr0`;
+important=`tput bold`;
+normal=`tput setaf 15`;
 
-username=$(tput setaf 64);
-path=$(tput setaf 100);
-branch=$(tput setaf 214);
-gitinfo=$(tput setaf 208);
+username=`tput setaf 64`;
+path=`tput setaf 100`;
+branch=`tput setaf 214`;
+gitinfo=`tput setaf 208`;
 
 # Sets the terminal title and prompt.
 PS1="\n"

@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+
+set -e
 
 if [[ "$1" == "help" ]]; then
     echo "usage: docker-login <profile> [<region>]"
@@ -21,7 +23,7 @@ if [[ "$region" == "" ]]; then
     region="sa-east-1"
 fi
 
-$(oktad $profile -- aws ecr get-login --no-include-email --region $region)
+`oktad $profile -- aws ecr get-login --no-include-email --region $region`
 
 unset profile
 unset region

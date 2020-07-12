@@ -1,60 +1,23 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-# Installs macOS packages.
+set -e
+
+brew update
 brew install \
-    advancecomp \
-    autoconf \
     awscli \
-    dep \
-    docker \
-    freetype \
-    gdbm \
-    gifsicle \
+    bash \
+    bash-completion \
     git \
-    glide \
-    go \
-    goenv \
-    gowsdl \
-    heroku \
-    httpie \
-    hugo \
-    icu4c \
-    imagemagick \
-    jhead \
-    jpeg \
-    jpegoptim \
-    kubernetes-cli \
-    libpng \
-    libtiff \
-    libtool \
-    libyaml \
+    jq \
     m-cli \
     mycli \
     mysql \
-    node \
     openssl \
-    openssl@1.1 \
-    optipng \
     pgcli \
-    pkg-config \
-    pngcrush \
-    pngquant \
     postgresql \
-    python \
-    python@2 \
-    rbenv \
-    readline \
     redis \
-    ruby \
-    ruby-build \
-    s-search \
     sl \
-    sqlite \
-    telnet \
     tfenv \
-    tmux \
-    wget \
-    xz
+    tmux
 
-# Install packages that aren't OS-specific.
 install-general-pkgs

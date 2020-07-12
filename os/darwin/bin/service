@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+
+set -e
 
 action="${1:-list}"
 possible_actions="list run start stop restart"

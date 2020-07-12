@@ -1,29 +1,31 @@
 #!/usr/bin/env sh
 
-# Rust and its packages (rust, rustup, cargo, etc.)
-curl https://sh.rustup.rs --sSf | \
-    sh -s -- -y --no-modify-path
+set -e
 
-# Install Visual Studio Code extensions.
-code --install-extension Poorchop.theme-darktooth
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+[ ! -d $GOENV_ROOT ] && git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
+
 code --install-extension be5invis.toml
 code --install-extension codezombiech.gitignore
 code --install-extension donjayamanne.githistory
 code --install-extension eriklynd.json-tools
+code --install-extension golang.go
+code --install-extension hashicorp.terraform
 code --install-extension johnpapa.vscode-peacock
-code --install-extension kalitaalexey.vscode-rust
 code --install-extension karigari.chat
-code --install-extension mauve.terraform
+code --install-extension kumar-harsh.graphql-for-vscode
 code --install-extension mrmlnc.vscode-pugbeautify
 code --install-extension mrmlnc.vscode-puglint
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-python.python
-code --install-extension ms-vscode.Go
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension ms-vsliveshare.vsliveshare-audio
 code --install-extension ms-vsliveshare.vsliveshare-pack
+code --install-extension Poorchop.theme-darktooth
 code --install-extension run-at-scale.terraform-doc-snippets
 code --install-extension rust-lang.rust
 code --install-extension sysoev.language-stylus
+code --install-extension vadimcn.vscode-lldb
 code --install-extension waderyan.gitblame
 code --install-extension wmaurer.change-case

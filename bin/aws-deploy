@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+
+set -e
 
 PROJECT_NAME="$1"
 if [[ "$PROJECT_NAME" == "" ]]; then

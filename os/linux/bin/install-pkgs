@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+
+set -e
 
 # Installs Arch packages: X11 stuff.
 yaourt -S --noconfirm \
