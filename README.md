@@ -1,5 +1,7 @@
 # Nhanderu's dotfiles
 
+[![License][badge-1-img]][badge-1-link]
+
 My own dotfiles. Yay.
 
 ## Steps to glory
@@ -14,10 +16,12 @@ install-pkgs
 
 ## License
 
-Almost all of this project code is in the public domain. See the [LICENSE file][2].
+This project code is in the public domain. See the [LICENSE file][2].
 
-The only exception is the `prompt.sh` file, which follows [Mathias Bynens' original license][3].
+The `lib/` folder contains external libraries with their own licenses.
 
 [1]: https://github.com/mathiasbynens/dotfiles
-[2]: https://github.com/Nhanderu/dotfiles/blob/master/LICENSE
-[3]: https://github.com/mathiasbynens/dotfiles/blob/master/LICENSE-MIT.txt
+[2]: ./LICENSE
+
+[badge-1-img]: https://img.shields.io/github/license/Nhanderu/dotfiles?style=flat-square
+[badge-1-link]: https://github.com/Nhanderu/dotfiles/blob/master/LICENSE
