@@ -20,6 +20,12 @@ This project code is in the public domain. See the [LICENSE file][2].
 
 The `lib/` folder contains external libraries with their own licenses.
 
+### Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you shall be in the public domain, without any
+additional terms or conditions.
+
 [1]: https://github.com/mathiasbynens/dotfiles
 [2]: ./LICENSE
 
