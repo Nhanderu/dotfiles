@@ -4,14 +4,10 @@ window:
   dynamic_padding: false
   decorations:     full
   startup_mode:    Windowed
+  dynamic_title:   true
 
 scrolling:
-  history:         10000
-  multiplier:      3
-  faux_multiplier: 3
-  auto_scroll:     false
-
-tabspaces: 8
+  history: 0
 
 font:
   normal:           { family: "Inconsolata" }
@@ -67,7 +63,7 @@ colors:
 
   indexed_colors: []
 
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration:  0
   color:     '0xffffff'
@@ -86,8 +82,6 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard:     false
-
-dynamic_title: true
 
 cursor:
   style:            Block
