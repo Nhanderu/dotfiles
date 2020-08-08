@@ -25,6 +25,8 @@ export GOENV_SHELL=bash
 export GOROOT="/usr/local/go"
 export GOPATH="$XDG_DATA_HOME/go"
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 PATH="$DOTFILES/bin"
 PATH+=":/bin"
 PATH+=":/sbin"
