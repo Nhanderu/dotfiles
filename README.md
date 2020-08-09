@@ -7,8 +7,8 @@ My own dotfiles. Yay.
 ## Steps to glory
 
 ```sh
-# Installs configurations and scripts.
-DOTFILES=~/projects/nhanderu/dotfiles ./bootstrap.sh
+# Bootstraps configurations and scripts.
+source ./config/fish/functions/bootstrap-dotfiles.fish
 
 # Installs packages.
 install-pkgs
@@ -16,9 +16,7 @@ install-pkgs
 
 ## License
 
-This project code is in the public domain. See the [LICENSE file][2].
-
-The `lib/` folder contains external libraries with their own licenses.
+This project code is in the public domain. See the [LICENSE file][1].
 
 ### Contribution
 
@@ -26,8 +24,7 @@ Unless you explicitly state otherwise, any contribution intentionally submitted
 for inclusion in the work by you shall be in the public domain, without any
 additional terms or conditions.
 
-[1]: https://github.com/mathiasbynens/dotfiles
-[2]: ./LICENSE
+[1]: ./LICENSE
 
 [badge-1-img]: https://img.shields.io/github/license/Nhanderu/dotfiles?style=flat-square
 [badge-1-link]: https://github.com/Nhanderu/dotfiles/blob/master/LICENSE
