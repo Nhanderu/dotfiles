@@ -1,14 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-set -e
-
-# Installs Arch packages: X11 stuff.
 yaourt -S --noconfirm \
     extra/xorg-server \
     extra/xorg-xinit \
     extra/xorg-xrandr
 
-# Installs Arch packages: current window manager.
 yaourt -S --noconfirm \
     community/i3-gaps \
     community/i3blocks \
@@ -16,19 +12,16 @@ yaourt -S --noconfirm \
     aur/j4-dmenu-desktop-git \
     aur/i3status-rust
 
-# Installs Arch packages: terminals.
 yaourt -S --noconfirm \
     community/alacritty \
     community/alacritty-terminfo \
     extra/xterm
 
-# Installs Arch packages: programming languages.
 yaourt -S --noconfirm \
     community/go \
     community/nodejs \
     community/npm
 
-# Installs Arch packages: editors.
 yaourt -S --noconfirm \
     aur/visual-studio-code-bin \
     community/neovim \
@@ -36,12 +29,10 @@ yaourt -S --noconfirm \
     extra/emacs \
     core/vi
 
-# Installs Arch packages: browsers.
 yaourt -S --noconfirm \
     extra/firefox
     # aur/tor-browser
 
-# Installs Arch packages: other tools.
 yaourt -S --noconfirm \
     community/discord \
     community/rtorrent \
@@ -64,5 +55,4 @@ yaourt -S --noconfirm \
     aur/pgcli-git \
     aur/postman
 
-# Install packages that aren't OS-specific.
 install-general-pkgs
