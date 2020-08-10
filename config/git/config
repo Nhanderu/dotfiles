@@ -1,0 +1,11 @@
+[user]
+	name = Rafael Escobar
+	email = rescobar@protonmail.com
+[tag]
+	sort = version:refname
+[rebase]
+	autosquash = true
+[url "git@github.com:Nhanderu"]
+	insteadOf = https://github.com/Nhanderu/
+[url "git@github.com:RedVentures"]
+	insteadOf = https://github.com/RedVentures/
