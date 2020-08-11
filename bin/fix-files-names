@@ -10,7 +10,7 @@ function __fix
         return
     end
 
-    # Perses the creation time from exiftool.
+    # Tries to parse the creation time from exiftool.
     set -l creation_time ( \
         exiftool $file | \
         grep -i 'create date' | \
@@ -20,10 +20,25 @@ function __fix
         string sub -l 14 \
     )
 
+    # Then, tries to parse the creation time from the file name.
     if test -z "$creation_time"
     or test "$creation_time" = "20021208120000" # ???
     or test "$creation_time" = "00000000000000"
-        return
+        set -l file_name (echo $file | rev | cut -d / -f 1 | cut -d . -f 2- | rev)
+        if string match -rq '^\d{8}_\d{6}_0( \(\d\))?$' $file_name
+            set creation_time (echo $file_name | cut -d _ -f 1-2 | tr -d _)
+        else if string match -rq '^\w{3}_\d{8}_\d{6}_?(\d{3})?$' $file_name
+            set creation_time (echo $file_name | cut -d _ -f 2-3 | tr -d _ | string sub -l 14)
+        else if string match -rq '^\w{3}-\d{8}-WA\d{4}$' $file_name
+            set creation_time (echo $file_name | cut -d - -f 2 | tr -d _)000000
+        else if string match -rq '^photo_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}$' $file_name
+            set creation_time (echo $file_name | cut -d _ -f 2- | tr -d _-)
+        else if string match -rq '^WhatsApp Image \d{4}-\d{2}-\d{2} at \d{2}.\d{2}.\d{2}( \(\d\))?$' $file_name
+            set creation_time (echo $file_name | cut -d ' ' -f 3,5 | tr -d '.- ')
+        else
+            # Give up.
+            return
+        end
     end
 
     # Fix left padding zeros.
@@ -41,43 +56,36 @@ function __fix
         end
     end
 
-    # Create unique suffix.
-    set -l suffix 001
-    while test -f (echo $prefix-$creation_time-$suffix.$format)
-        set suffix (printf %03d (math $suffix + 1))
-    end
-
+    # Gets dir -- path without file.
     set -l dir (echo $file | rev | cut -d / -f 2- | rev)
     if test $dir = $file
         set dir .
     end
 
+    # Create unique suffix.
+    set -l suffix 001
+    while test -f (echo $dir/$prefix-$creation_time-$suffix.$format)
+        set suffix (printf %03d (math $suffix + 1))
+    end
+
     set -l new_file (echo $dir/$prefix-$creation_time-$suffix.$format)
     echo $file → $new_file
     mv $file $new_file
-    touch -t (echo $creation_time | sed "s/./&./12") $new_file
+    touch -t (echo $creation_time | sed 's/./&./12') $new_file
 end
 
-for file in **.jpg
+for file in **.jpg **.JPG **.jpeg **.JPEG
     __fix $file jpg img
 end
 
-for file in **.JPG
-    __fix $file jpg img
-end
-
-for file in **.jpeg
-    __fix $file jpg img
-end
-
-for file in **.JPEG
-    __fix $file jpg img
-end
-
-for file in **.png
+for file in **.png **.PNG
     __fix $file png img
 end
 
-for file in **.mp4
+for file in **.mp4 **.MP4
     __fix $file mp4 vid
+end
+
+for file in **.mov **.MOV
+    __fix $file mov vid
 end
