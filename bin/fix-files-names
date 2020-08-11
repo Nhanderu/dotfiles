@@ -1,0 +1,83 @@
+#!/usr/bin/env fish
+
+function __fix
+
+    set -l file $argv[1]
+    set -l format $argv[2]
+    set -l prefix $argv[3]
+
+    if string match -rq $prefix'-\d{14}-\d{3}\.'$format $file
+        return
+    end
+
+    # Perses the creation time from exiftool.
+    set -l creation_time ( \
+        exiftool $file | \
+        grep -i 'create date' | \
+        head -n 1 | \
+        cut -d : -f 2- | \
+        tr -d ': ' | \
+        string sub -l 14 \
+    )
+
+    if test -z "$creation_time"
+    or test "$creation_time" = "20021208120000" # ???
+    or test "$creation_time" = "00000000000000"
+        return
+    end
+
+    # Fix left padding zeros.
+    if test (string length $creation_time) != 14
+        set creation_time ''
+        for d in ( \
+            exiftool $file | \
+            grep -i 'create date' | \
+            cut -d : -f 2- | \
+            tr : ' ' | \
+            string trim | \
+            tr ' ' \n \
+        )
+            set creation_time (printf $creation_time%02d $d)
+        end
+    end
+
+    # Create unique suffix.
+    set -l suffix 001
+    while test -f (echo $prefix-$creation_time-$suffix.$format)
+        set suffix (printf %03d (math $suffix + 1))
+    end
+
+    set -l dir (echo $file | rev | cut -d / -f 2- | rev)
+    if test $dir = $file
+        set dir .
+    end
+
+    set -l new_file (echo $dir/$prefix-$creation_time-$suffix.$format)
+    echo $file → $new_file
+    mv $file $new_file
+    touch -t (echo $creation_time | sed "s/./&./12") $new_file
+end
+
+for file in **.jpg
+    __fix $file jpg img
+end
+
+for file in **.JPG
+    __fix $file jpg img
+end
+
+for file in **.jpeg
+    __fix $file jpg img
+end
+
+for file in **.JPEG
+    __fix $file jpg img
+end
+
+for file in **.png
+    __fix $file png img
+end
+
+for file in **.mp4
+    __fix $file mp4 vid
+end
