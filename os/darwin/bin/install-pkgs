@@ -6,6 +6,7 @@ brew install \
     awscli \
     bash \
     bash-completion \
+    fish \
     git \
     jq \
     m-cli \
