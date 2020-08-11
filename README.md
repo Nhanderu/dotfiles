@@ -8,7 +8,7 @@ My own dotfiles. Yay.
 
 ```sh
 # Bootstraps configurations and scripts.
-source ./config/fish/functions/bootstrap-dotfiles.fish
+./bin/bootstrap-dotfiles
 
 # Installs packages.
 install-pkgs
