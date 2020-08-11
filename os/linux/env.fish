@@ -1,1 +1,1 @@
-set -Ux PATH "$PATH" "$DOTFILES/os/linux/bin"
+set PATH $PATH "$DOTFILES/os/linux/bin"
