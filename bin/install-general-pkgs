@@ -2,8 +2,8 @@
 
 set -e
 
+curl https://git.io/fisher -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 [ ! -d $GOENV_ROOT ] && git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
 
 code --install-extension be5invis.toml
@@ -29,3 +29,5 @@ code --install-extension sysoev.language-stylus
 code --install-extension vadimcn.vscode-lldb
 code --install-extension waderyan.gitblame
 code --install-extension wmaurer.change-case
+
+fisher add jorgebucaran/nvm.fish

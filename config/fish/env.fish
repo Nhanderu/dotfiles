@@ -11,7 +11,6 @@ set -Ux XDG_DATA_HOME "$HOME/.local/share"
 
 set -Ux XINITRC "$XDG_CONFIG_HOME/X11/xinitrc"
 
-set -Ux NVM_DIR "$XDG_CONFIG_HOME/nvm"
 
 set -Ux RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 set -Ux CARGO_HOME "$XDG_DATA_HOME/cargo"
