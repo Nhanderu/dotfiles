@@ -6,6 +6,7 @@ function __fix
     set -l format $argv[2]
     set -l prefix $argv[3]
 
+    # Ignores the ones that were already fixed.
     if string match -rq $prefix'-\d{14}-\d{3}\.'$format $file
         return
     end
@@ -31,8 +32,8 @@ function __fix
             set creation_time (echo $file_name | cut -d _ -f 2-3 | tr -d _ | string sub -l 14)
         else if string match -rq '^\w{3}-\d{8}-WA\d{4}$' $file_name
             set creation_time (echo $file_name | cut -d - -f 2 | tr -d _)000000
-        else if string match -rq '^photo_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}$' $file_name
-            set creation_time (echo $file_name | cut -d _ -f 2- | tr -d _-)
+        else if string match -rq '^photo_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}( \(\d+\))?$' $file_name
+            set creation_time (echo $file_name | cut -d _ -f 2- | cut -d ' ' -f 1 | tr -d _-)
         else if string match -rq '^WhatsApp Image \d{4}-\d{2}-\d{2} at \d{2}.\d{2}.\d{2}( \(\d\))?$' $file_name
             set creation_time (echo $file_name | cut -d ' ' -f 3,5 | tr -d '.- ')
         else
