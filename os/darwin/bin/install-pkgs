@@ -7,6 +7,7 @@ brew install \
     bash \
     bash-completion \
     fish \
+    gh \
     git \
     jq \
     m-cli \
@@ -22,21 +23,24 @@ brew install \
 
 brew cask install \
     alacritty \
+    authy \
     discord \
     firefox \
+    microsoft-outlook \
     mysql-shell \
-    mysql-utilities \
     mysqlworkbench \
+    postman \
     shiba \
     skype \
+    slack \
     spectacle \
     spotify \
     steam \
-    teamviewer \
     telegram-desktop \
     virtualbox \
     visual-studio-code \
     vlc \
-    whatsapp
+    whatsapp \
+    zoomus
 
 install-general-pkgs
