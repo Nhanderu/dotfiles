@@ -1,10 +1,8 @@
-#!/usr/bin/env bash
-
-set -e
+#!/usr/bin/env fish
 
 curl https://git.io/fisher -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-[ ! -d $GOENV_ROOT ] && git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
+test ! -d $GOENV_ROOT; and git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
 
 code --install-extension be5invis.toml
 code --install-extension codezombiech.gitignore
