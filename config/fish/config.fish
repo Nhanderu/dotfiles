@@ -1,14 +1,8 @@
-source "$__fish_config_dir/env.fish"
-source "$__fish_config_dir/alias.fish"
+bass source $__fish_config_dir/sh/env.sh
+bass source $__fish_config_dir/sh/os.sh
 
-set -l current_os (uname | tr '[A-Z]' '[a-z]')
-
-find $DOTFILES/os/$current_os/bin -type f -exec chmod +x {} \;
-for file in $DOTFILES/os/$current_os/*.fish
-    if test -f "$file"
-        source "$file"
-    end
-end
+alias aura "aura --color=auto"
+alias tmux "tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 
 if test -z "$TMUX"
     tmux attach

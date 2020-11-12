@@ -4,15 +4,9 @@
 
 My own dotfiles. Yay.
 
-## Steps to glory
+## Bootstrap
 
-```sh
-# Bootstraps configurations and scripts.
-./bin/bootstrap-dotfiles
-
-# Installs packages.
-install-pkgs
-```
+Simply run `./bin/bootstrap-dotfiles`.
 
 ## License
 

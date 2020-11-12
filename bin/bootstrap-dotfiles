@@ -1,6 +1,23 @@
-#!/usr/bin/env fish
+#!/usr/bin/env sh
 
-source $__fish_config_dir/env.fish
+if test -n $__fish_config_dir; then
+    export __fish_config_dir="./config/fish"
+fi
+
+source $__fish_config_dir/sh/env.sh
+source $__fish_config_dir/sh/os.sh
+
 cp -rp $DOTFILES/config/. "$XDG_CONFIG_HOME"
 find $DOTFILES/bin -type f -exec chmod +x {} \;
-source $__fish_config_dir/config.fish
+
+if test -z "$IGNORE_PKGS"; then
+    TMUX=1 install-pkgs
+fi
+
+if ! grep -q `which fish` /etc/shells; then
+    sudo sh -c 'echo `which fish` >> /etc/shells'
+fi
+
+if test $SHELL != `which fish`; then
+    chsh -s `which fish`
+fi

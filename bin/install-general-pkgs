@@ -1,8 +1,13 @@
 #!/usr/bin/env fish
 
-curl https://git.io/fisher -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+curl -sL git.io/fisher | source
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 test ! -d $GOENV_ROOT; and git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
+
+fisher install \
+    jorgebucaran/fisher \
+    jorgebucaran/nvm.fish \
+    edc/bass
 
 code --install-extension be5invis.toml
 code --install-extension codezombiech.gitignore
@@ -27,5 +32,3 @@ code --install-extension sysoev.language-stylus
 code --install-extension vadimcn.vscode-lldb
 code --install-extension waderyan.gitblame
 code --install-extension wmaurer.change-case
-
-fisher add jorgebucaran/nvm.fish
