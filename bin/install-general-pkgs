@@ -2,7 +2,9 @@
 
 curl -sL git.io/fisher | source
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-test ! -d $GOENV_ROOT; and git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
+test ! -d $GOENV_ROOT
+and git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
+and configure-goenv-command
 
 fisher install \
     jorgebucaran/fisher \
