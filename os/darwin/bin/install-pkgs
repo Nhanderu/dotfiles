@@ -25,7 +25,7 @@ brew install \
     tfenv \
     tmux
 
-brew cask install \
+brew install --cask \
     alacritty \
     authy \
     discord \
@@ -34,6 +34,7 @@ brew cask install \
     mysql-shell \
     mysqlworkbench \
     postman \
+    rar \
     shiba \
     skype \
     slack \
@@ -45,6 +46,6 @@ brew cask install \
     visual-studio-code \
     vlc \
     whatsapp \
-    zoomus
+    zoom
 
 install-general-pkgs
