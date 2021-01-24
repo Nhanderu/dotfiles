@@ -17,6 +17,7 @@ brew install \
     m-cli \
     mycli \
     mysql \
+    neovim \
     openssl \
     pgcli \
     postgresql \
