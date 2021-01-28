@@ -53,6 +53,7 @@ yaourt -S --noconfirm \
     aur/aura-bin \
     aur/heroku-cli \
     aur/pgcli-git \
-    aur/postman
+    aur/postman \
+    the_silver_searcher
 
 install-general-pkgs

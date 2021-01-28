@@ -24,6 +24,7 @@ brew install \
     redis \
     sl \
     tfenv \
+    the_silver_searcher \
     tmux
 
 brew install --cask \
