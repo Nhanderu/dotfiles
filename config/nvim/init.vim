@@ -51,12 +51,11 @@ set ttyfast
 set regexpengine=1
 set colorcolumn=72
 
-nnoremap ; :
-nnoremap <c-p> :Files<cr>
-nnoremap <c-f> :Ag<space>
-nnoremap <c-b> :NERDTreeToggle<cr>
-
 let mapleader="\<space>"
+nnoremap ; :
+nnoremap <leader>p :Files<cr>
+nnoremap <leader>f :Ag<space>
+nnoremap <leader>b :NERDTreeToggle<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>wq :wq<cr>

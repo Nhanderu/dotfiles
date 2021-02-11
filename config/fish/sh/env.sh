@@ -1,5 +1,5 @@
 export BROWSER=`which firefox`
-export EDITOR=`which vim`
+export EDITOR=`which nvim`
 export TERMINAL=`which alacritty`
 
 export PROJ="$HOME/projects"
@@ -14,10 +14,10 @@ export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CARGO_NAME="Rafael Escobar"
-export CARGO_EMAIL="rescobar@protonmail.com"
+export CARGO_EMAIL="rafael@esco.dev"
 
 export GOENV_ROOT="$XDG_DATA_HOME/goenv"
-export GOENV_SHELL=bash
+export GOENV_SHELL=fish
 export GOROOT="/usr/local/go"
 export GOPATH="$XDG_DATA_HOME/go"
 
