@@ -4,21 +4,17 @@
 " https://github.com/giioohbernini/dotnvim/blob/master/init.vim
 
 call plug#begin()
-" Common text stuff.
 Plug 'terryma/vim-multiple-cursors'
-" File search.
 Plug 'junegunn/fzf', { 'do': './install --all --xdg' }
 Plug 'junegunn/fzf.vim'
-" File browser.
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'mkitt/tabline.vim'
-Plug 'ryanoasis/vim-devicons'
-" Languages.
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'machakann/vim-highlightedyank'
+Plug 'andymass/vim-matchup'
+
 Plug 'sheerun/vim-polyglot'
-" Lint.
 Plug 'dense-analysis/ale'
-" Autocomplete.
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
@@ -27,38 +23,32 @@ Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
 Plug 'ncm2/ncm2-go'
 Plug 'ncm2/ncm2-racer'
 Plug 'ncm2/ncm2-tern',  { 'do': 'npm install' }
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-" Git.
-Plug 'tpope/vim-fugitive'
 call plug#end()
 
 syntax on
-set background=dark
 colorscheme darktooth
+highlight ColorColumn ctermbg=238
 
 set undofile
-set undodir=~/.local/share/nvim/undodir
+set undodir=~/.local/share/nvim/undodir/
 set dir=~/.local/share/nvim/swap/
-
 set hidden
 set nowrap
 set number
 set relativenumber
 set inccommand=nosplit
 set synmaxcol=500
-set ttyfast
 set regexpengine=1
-set colorcolumn=72
+set colorcolumn=80
+set ignorecase
+set noshowmode
 
-let mapleader="\<space>"
+let mapleader="\<c-x>"
 nnoremap ; :
 nnoremap <leader>p :Files<cr>
-nnoremap <leader>f :Ag<space>
-nnoremap <leader>b :NERDTreeToggle<cr>
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>wq :wq<cr>
+nnoremap <leader>f :Ag<cr>
+nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>b :buffers<cr>:buffer<space>
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
@@ -71,9 +61,21 @@ let g:go_fmt_command = "goimports"
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
-function! StartUp()
-    if 0 == argc()
-        NERDTree
-    end
-endfunction
-autocmd VimEnter * call StartUp()
+let g:NERDTreeDirArrowExpandable = "\u00a0"
+let g:NERDTreeDirArrowCollapsible = "\u00a0"
+
+let g:lightline =
+    \ { 'colorscheme': 'jellybeans'
+    \ , 'active':
+    \     { 'left':
+    \         [ [ 'mode', 'paste' ]
+    \         , [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+    \         ]
+    \     }
+    \ , 'component_function':
+    \     { 'gitbranch': 'gitbranch#name' }
+    \ }
+
+autocmd FileType gitcommit setlocal textwidth=72
+autocmd Filetype gitcommit setlocal colorcolumn=50
+autocmd Filetype rust setlocal colorcolumn=100
