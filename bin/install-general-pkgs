@@ -11,6 +11,9 @@ fisher install \
     jorgebucaran/nvm.fish \
     edc/bass
 
+cargo install \
+   cargo-edit
+
 code --install-extension be5invis.toml
 code --install-extension codezombiech.gitignore
 code --install-extension donjayamanne.githistory
