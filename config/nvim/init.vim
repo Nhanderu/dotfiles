@@ -29,6 +29,7 @@ set regexpengine=1
 set colorcolumn=80
 set ignorecase
 set noshowmode
+set background=dark
 set nocompatible
 
 let mapleader="\<c-x>"
