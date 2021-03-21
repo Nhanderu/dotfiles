@@ -14,7 +14,7 @@ fisher install \
 cargo install \
    cargo-edit
 
-code --install-extension be5invis.toml
+code --install-extension bmalehorn.vscode-fish
 code --install-extension codezombiech.gitignore
 code --install-extension donjayamanne.githistory
 code --install-extension eriklynd.json-tools

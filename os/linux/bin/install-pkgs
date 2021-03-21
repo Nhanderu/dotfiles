@@ -1,59 +1,25 @@
-#!/usr/bin/env sh
+sudo pacman -S \
+    alacritty \
+    code \
+    fish \
+    glfw-wayland \
+    neovim \
+    qt5-wayland \
+    sway \
+    wayland \
+    xorg-xeyes \
+    xorg-xwayland \
+    discord \
+    rtorrent \
+    telegram-desktop \
+    jq \
+    bemenu-wlroots \
+    bemenu \
+    otf-fira-mono \
+    vlc \
+    wl-clipboard
 
-yaourt -S --noconfirm \
-    extra/xorg-server \
-    extra/xorg-xinit \
-    extra/xorg-xrandr
-
-yaourt -S --noconfirm \
-    community/i3-gaps \
-    community/i3blocks \
-    community/i3lock \
-    aur/j4-dmenu-desktop-git \
-    aur/i3status-rust
-
-yaourt -S --noconfirm \
-    community/alacritty \
-    community/alacritty-terminfo \
-    extra/xterm
-
-yaourt -S --noconfirm \
-    community/go \
-    community/nodejs \
-    community/npm
-
-yaourt -S --noconfirm \
-    aur/visual-studio-code-bin \
-    community/neovim \
-    extra/vim \
-    extra/emacs \
-    core/vi
-
-yaourt -S --noconfirm \
-    extra/firefox
-    # aur/tor-browser
-
-yaourt -S --noconfirm \
-    community/discord \
-    community/rtorrent \
-    community/telegram-desktop \
-    community/xdotool \
-    community/sl \
-    # multilib/steam \
-    extra/feh \
-    extra/vlc \
-    extra/gimp \
-    extra/nitrogen \
-    extra/zip \
-    extra/unrar \
-    extra/unzip \
-    aur/popcorntime \
-    aur/spotify \
-    aur/stremio-legacy \
-    aur/aura-bin \
-    aur/heroku-cli \
-    aur/pgcli-git \
-    aur/postman \
-    the_silver_searcher
+yay -S \
+    grimshot
 
 install-general-pkgs

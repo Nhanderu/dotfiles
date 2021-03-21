@@ -10,13 +10,12 @@ scrolling:
   history: 0
 
 font:
-  size:             15.0
+  size:             10.0
   offset:           { x: 0, y: 0 }
   glyph_offset:     { x: 0, y: 0 }
   use_thin_strokes: true
-  normal:           { family: "Inconsolata", style: "Regular" }
-  bold:             { family: "Inconsolata", style: "Black" }
-  italic:           { family: "Inconsolata", style: "ExtraLight" }
+  normal:           { family: "Fira Mono", style: "Regular" }
+  bold:             { family: "Fira Mono", style: "Bold" }
 
 debug:
   render_timer:       false

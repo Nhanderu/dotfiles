@@ -49,6 +49,7 @@ brew install --cask \
     visual-studio-code \
     vlc \
     whatsapp \
+    font-fira-mono \
     zoom
 
 install-general-pkgs

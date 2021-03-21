@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+while true; do
+
+    # Missing volume and bluetooth. Maybe HDD usage.
+
+    uptime="up $(uptime | cut -d, -f1 | cut -d' ' -f4,5 | sed 's/^ *//g')"
+
+    b="$(cat /sys/class/backlight/intel_backlight/brightness)"
+    b_max="$(cat /sys/class/backlight/intel_backlight/max_brightness)"
+    brightness="bri $((b*100/b_max))%"
+
+    net_status="$(iwctl station wlan0 show | grep State | sed 's/State//g' | tr -d ' ')"
+    if [[ "$net_status" == "connected" ]]; then
+        net_status="$(iwctl station wlan0 show | grep "Connected network" | sed 's/Connected network//g' | tr -d ' ')"
+    fi
+    net="net $net_status"
+
+    m_free="$(cat /proc/meminfo | grep MemFree | sed 's/[^0-9]//g')"
+    m_max="$(cat /proc/meminfo | grep MemTotal | sed 's/[^0-9]//g')"
+    m="$(((m_max-m_free)/1024))"
+    memory="mem $((m*100/(m_max/1024)))% ${m}mb"
+
+    cpu="cpu $(cat /sys/class/thermal/thermal_zone8/temp | cut -b1,2)°C"
+
+    battery_charging=""
+    battery_status="$(cat /sys/class/power_supply/BAT0/status)"
+    if [[ "$battery_status" == "Charging" ]]; then
+        battery_charging="↑"
+    fi
+    battery="bat $(cat /sys/class/power_supply/BAT0/capacity)%$battery_charging"
+
+    time=`date "+%Y-%m-%d %H:%M:%S"`
+
+    sep="       "
+    echo "$uptime$sep$brightness$sep$net$sep$memory$sep$cpu$sep$battery$sep$time"
+    sleep 1
+done

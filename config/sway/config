@@ -1,0 +1,94 @@
+set $mod Mod4
+
+# Display.
+workspace_layout    tabbed
+default_border      none
+focus_follows_mouse no
+
+# System control.
+bindsym $mod+control+l exec swaylock
+bindsym $mod+control+c reload
+bindsym $mod+control+r restart
+bindsym $mod+control+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Software control.
+bindsym $mod+f      fullscreen toggle
+bindsym $mod+q      kill
+bindsym $mod+return exec alacritty
+bindsym $mod+space  exec bemenu-run
+
+# Window.
+bindsym alt+tab          focus next
+bindsym alt+shift+tab    focus prev
+bindsym $mod+shift+Left  move next
+bindsym $mod+shift+Right move prev
+
+# Workspace focus.
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Workspace moving.
+bindsym $mod+shift+1 move container to workspace 1
+bindsym $mod+shift+2 move container to workspace 2
+bindsym $mod+shift+3 move container to workspace 3
+bindsym $mod+shift+4 move container to workspace 4
+bindsym $mod+shift+5 move container to workspace 5
+bindsym $mod+shift+6 move container to workspace 6
+bindsym $mod+shift+7 move container to workspace 7
+bindsym $mod+shift+8 move container to workspace 8
+bindsym $mod+shift+9 move container to workspace 9
+bindsym $mod+shift+0 move container to workspace 10
+
+# Screenshot.
+bindsym $mod+p               exec grimshot copy output
+bindsym $mod+control+p       exec grimshot copy area
+bindsym $mod+shift+p         exec grimshot save output
+bindsym $mod+shift+control+p exec grimshot save area
+
+# Scratchpad.
+bindsym $mod+shift+minus move scratchpad
+bindsym $mod+minus       scratchpad show
+
+# Style.
+font "FiraMono-Regular" 10
+client.focused   #504945 #504945 #fdf4c1
+client.unfocused #282828 #282828 #fdf4c1
+client.urgent    #8f3f71 #8f3f71 #fdf4c1
+
+# Top bar.
+bar {
+    position       top
+    status_command statusline
+    colors {
+        statusline         #fdf4c1
+        background         #282828
+        focused_workspace  #504945 #504945 #fdf4c1
+        active_workspace   #504945 #504945 #fdf4c1
+        inactive_workspace #282828 #282828 #fdf4c1
+        urgent_workspace   #8f3f71 #8f3f71 #fdf4c1
+    }
+}
+
+# Audio configuration. (not working)
+# bindsym $mod+KP_Add      exec "pactl -- set-sink-volume 0 +10%"
+# bindsym $mod+KP_Subtract exec "pactl -- set-sink-volume 0 -10%"
+
+# Devices.
+output * {
+    background #282828 solid_color
+}
+input * {
+    xkb_layout "br"
+    tap enabled
+    natural_scroll enabled
+}
+
+include /etc/sway/config.d/*
