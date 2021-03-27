@@ -16,9 +16,9 @@ while true; do
     fi
     net="net $net_status"
 
-    m_free="$(cat /proc/meminfo | grep MemFree | sed 's/[^0-9]//g')"
+    m_avail="$(cat /proc/meminfo | grep MemAvailable | sed 's/[^0-9]//g')"
     m_max="$(cat /proc/meminfo | grep MemTotal | sed 's/[^0-9]//g')"
-    m="$(((m_max-m_free)/1024))"
+    m="$(((m_max-m_avail)/1024))"
     memory="mem $((m*100/(m_max/1024)))% ${m}mb"
 
     cpu="cpu $(cat /sys/class/thermal/thermal_zone8/temp | cut -b1,2)°C"
