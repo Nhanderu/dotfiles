@@ -78,9 +78,14 @@ bar {
     }
 }
 
-# Audio configuration. (not working)
-# bindsym $mod+KP_Add      exec "pactl -- set-sink-volume 0 +10%"
-# bindsym $mod+KP_Subtract exec "pactl -- set-sink-volume 0 -10%"
+# Audio configuration.
+bindsym XF86AudioRaiseVolume exec amixer sset Master 10%+
+bindsym XF86AudioLowerVolume exec amixer sset Master 10%-
+bindsym XF86AudioMute        exec amixer sset Master toggle
+
+# Brightness configuration.
+bindsym XF86MonBrightnessUp   exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 # Devices.
 output * {
