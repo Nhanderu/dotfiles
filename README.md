@@ -6,7 +6,7 @@ My own dotfiles. Yay.
 
 ## Bootstrap
 
-Simply run `./bin/bootstrap-dotfiles`.
+Simply run `./bin/bootstrap-dotfiles -i`.
 
 ## License
 
