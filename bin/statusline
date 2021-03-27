@@ -2,9 +2,13 @@
 
 while true; do
 
-    # Missing volume and bluetooth. Maybe HDD usage.
+    # Missing bluetooth. Maybe HDD usage.
 
     uptime="up $(uptime | cut -d, -f1 | cut -d' ' -f4,5 | sed 's/^ *//g')"
+
+    audio_volume="$(amixer sget Master | tail -n1 | sed -r 's/.*\[([0-9]+%)\].*/\1/g')"
+    audio_status="$(amixer sget Master | tail -n1 | sed -r 's/.*\[(on|off)\].*/\1/g')"
+    audio="vol $audio_volume $audio_status"
 
     b="$(cat /sys/class/backlight/intel_backlight/brightness)"
     b_max="$(cat /sys/class/backlight/intel_backlight/max_brightness)"
@@ -33,6 +37,6 @@ while true; do
     time=`date "+%Y-%m-%d %H:%M:%S"`
 
     sep="       "
-    echo "$uptime$sep$brightness$sep$net$sep$memory$sep$cpu$sep$battery$sep$time"
+    echo "$uptime$sep$audio$sep$brightness$sep$net$sep$memory$sep$cpu$sep$battery$sep$time"
     sleep 1
 done
