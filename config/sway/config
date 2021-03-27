@@ -48,10 +48,10 @@ bindsym $mod+shift+9 move container to workspace 9
 bindsym $mod+shift+0 move container to workspace 10
 
 # Screenshot.
-bindsym $mod+p               exec grimshot copy output
-bindsym $mod+control+p       exec grimshot copy area
-bindsym $mod+shift+p         exec grimshot save output
-bindsym $mod+shift+control+p exec grimshot save area
+bindsym print               exec grimshot copy output
+bindsym control+print       exec grimshot copy area
+bindsym shift+print         exec grimshot save output
+bindsym shift+control+print exec grimshot save area
 
 # Scratchpad.
 bindsym $mod+shift+minus move scratchpad
@@ -59,6 +59,7 @@ bindsym $mod+minus       scratchpad show
 
 # Style.
 font "FiraMono-Regular" 10
+hide_edge_borders --i3 both
 client.focused   #504945 #504945 #fdf4c1
 client.unfocused #282828 #282828 #fdf4c1
 client.urgent    #8f3f71 #8f3f71 #fdf4c1
@@ -86,9 +87,9 @@ output * {
     background #282828 solid_color
 }
 input * {
-    xkb_layout "br"
     tap enabled
     natural_scroll enabled
+    xkb_layout     br
 }
 
 include /etc/sway/config.d/*
