@@ -41,14 +41,14 @@ colors:
     white:   '0xfdf4c1'
 
   bright:
-    black:   '0x32302f'
+    black:   '0x504945'
     red:     '0xfb4933'
     green:   '0xb8bb26'
     yellow:  '0xfabd2f'
     blue:    '0x83a598'
     magenta: '0xd3869b'
     cyan:    '0x3fd7e5'
-    white:   '0xffffc8'
+    white:   '0xfdf4c1'
 
   dim:
     black:   '0x1d2021'
@@ -58,14 +58,14 @@ colors:
     blue:    '0x2b3c44'
     magenta: '0x4e3d45'
     cyan:    '0x205161'
-    white:   '0xf4e8ba'
+    white:   '0xfdf4c1'
 
   indexed_colors: []
 
 bell:
   animation: EaseOutExpo
   duration:  0
-  color:     '0xffffff'
+  color:     '0xfdf4c1'
 
 background_opacity: 1.0
 
