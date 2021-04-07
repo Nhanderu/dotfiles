@@ -1,28 +1,35 @@
 sudo pacman -S \
     alacritty \
+    alsa-firmware \
+    alsa-utils \
+    bemenu \
+    bemenu-wlroots \
+    bisq \
+    brightnessctl \
     code \
+    discord \
     fish \
     glfw-wayland \
-    neovim \
-    qt5-wayland \
-    sway \
-    wayland \
-    xorg-xeyes \
-    xorg-xwayland \
-    discord \
-    rtorrent \
-    telegram-desktop \
     jq \
-    bemenu-wlroots \
-    bemenu \
+    neovim \
+    openssh \
     otf-fira-mono \
+    postman-bin \
+    qt5-wayland \
+    rtorrent \
+    sway \
+    telegram-desktop \
+    tmux \
+    unzip \
     vlc \
+    wayland \
     wl-clipboard \
-    brightnessctl \
-    alsa-firmware \
-    alsa-utils
+    xorg-xwayland \
+    zip
 
 yay -S \
+    greetd \
+    greetd-tuigreet \
     grimshot
 
 install-general-pkgs

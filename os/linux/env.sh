@@ -7,7 +7,7 @@ export BEMENU_OPTS="\
     --ignorecase \
     --bottom \
     --prompt=search \
-    --fn='FiraMono-Regular 10' \
+    --fn \"FiraMono-Regular 10\" \
     --tb=#282828 \
     --tf=#79740e \
     --fb=#282828 \
