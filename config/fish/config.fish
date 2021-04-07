@@ -7,10 +7,15 @@ if status --is-login
 and test -z "$DISPLAY"
 and test (tty) = "/dev/tty1"
     exec sway
+end
 
-else if test -z "$TMUX"
+if status --is-interactive
+and test -z "$TMUX"
     tmux attach
     or tmux new-session
     and exit
+end
 
+if status --is-interactive
+    source (goenv init - | psub)
 end
