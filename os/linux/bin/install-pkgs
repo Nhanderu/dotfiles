@@ -30,6 +30,8 @@ sudo pacman -S \
 yay -S \
     greetd \
     greetd-tuigreet \
-    grimshot
+    grimshot \
+    nodenv \
+    nodenv-node-build
 
 install-general-pkgs
