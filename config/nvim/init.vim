@@ -9,6 +9,7 @@ Plug 'junegunn/fzf', { 'do': './install --all --xdg' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
+Plug 'taohexxx/lightline-buffer'
 Plug 'itchyny/vim-gitbranch'
 Plug 'machakann/vim-highlightedyank'
 Plug 'andymass/vim-matchup'
@@ -31,6 +32,7 @@ set ignorecase
 set noshowmode
 set background=dark
 set nocompatible
+set showtabline=2
 
 let mapleader="\<c-x>"
 nnoremap ; :
@@ -38,6 +40,8 @@ nnoremap <leader>p :Files<cr>
 nnoremap <leader>f :Ag<cr>
 nnoremap <leader>t :NERDTreeToggle<cr>
 nnoremap <leader>b :buffers<cr>:buffer<space>
+nnoremap <leader><left> :bprev<CR>
+nnoremap <leader><right> :bnext<CR>
 nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
 nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
 nnoremap <silent> gd <Plug>(coc-definition)
@@ -50,7 +54,7 @@ map L $
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
-let g:rust_clip_command = 'pbcopy'
+let g:rust_clip_command = 'wl-copy'
 
 let g:go_play_open_browser = 0
 let g:go_fmt_fail_silently = 1
@@ -79,6 +83,24 @@ let g:lightline =
     \         [ [ 'mode', 'paste' ]
     \         , [ 'gitbranch', 'filename', 'cocstatus', 'readonly', 'modified' ]
     \         ]
+    \     }
+    \ , 'tabline':
+    \     { 'left':
+    \         [ [ 'bufferinfo' ]
+    \         , [ 'separator' ]
+    \         , [ 'bufferbefore', 'buffercurrent', 'bufferafter' ]
+    \        ]
+    \     , 'right': [[ 'close' ]]
+    \     }
+    \ , 'component_expand':
+    \     { 'buffercurrent': 'lightline#buffer#buffercurrent'
+    \     , 'bufferbefore': 'lightline#buffer#bufferbefore'
+    \     , 'bufferafter': 'lightline#buffer#bufferafter'
+    \     }
+    \ , 'component_type':
+    \     { 'buffercurrent': 'tabsel'
+    \     , 'bufferbefore': 'raw'
+    \     , 'bufferafter': 'raw'
     \     }
     \ , 'component_function':
     \     { 'gitbranch': 'gitbranch#name'

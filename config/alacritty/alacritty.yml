@@ -1,6 +1,6 @@
 window:
   dimensions:      { columns: 80, lines: 24 }
-  padding:         { x: 2, y: 2 }
+  padding:         { x: 0, y: 0 }
   dynamic_padding: false
   decorations:     full
   startup_mode:    Windowed
