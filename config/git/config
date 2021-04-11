@@ -1,6 +1,7 @@
 [user]
-	name = Rafael Escobar
-	email = rafael@esco.dev
+	name       = Rafael Escobar
+	email      = rafael@esco.dev
+	signingkey = 3E61740BD0944B1A
 [tag]
 	sort = version:refname
 [rebase]
