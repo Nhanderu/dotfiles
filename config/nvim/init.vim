@@ -96,7 +96,7 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 syntax on
-colorscheme darktooth
+colorscheme jellybeans
 highlight ColorColumn ctermbg=238
 filetype plugin indent on
 
