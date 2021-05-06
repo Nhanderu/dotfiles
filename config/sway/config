@@ -19,6 +19,8 @@ bindsym $mod+return exec alacritty
 bindsym $mod+space  exec bemenu-run
 
 # Window.
+bindsym alt+tab          focus next
+bindsym shift+alt+tab    focus prev
 bindsym $mod+left        focus left
 bindsym $mod+right       focus right
 bindsym $mod+shift+left  move left
