@@ -3,8 +3,7 @@ sudo pacman -S \
     alsa-firmware \
     alsa-utils \
     bemenu \
-    bemenu-wlroots \
-    bisq \
+    wayland-bemenu \
     brightnessctl \
     code \
     discord \
@@ -28,6 +27,7 @@ sudo pacman -S \
     zip
 
 yay -S \
+    bisq \
     greetd \
     greetd-tuigreet \
     grimshot \
