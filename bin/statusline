@@ -10,8 +10,8 @@ while true; do
     audio_status="$(amixer sget Master | tail -n1 | sed -r 's/.*\[(on|off)\].*/\1/g')"
     audio="vol $audio_volume $audio_status"
 
-    b="$(cat /sys/class/backlight/intel_backlight/brightness)"
-    b_max="$(cat /sys/class/backlight/intel_backlight/max_brightness)"
+    b="$(brightnessctl get)"
+    b_max="$(brightnessctl max)"
     brightness="bri $((b*100/b_max))%"
 
     net_status="$(iwctl station wlan0 show | grep State | sed 's/State//g' | tr -d ' ')"

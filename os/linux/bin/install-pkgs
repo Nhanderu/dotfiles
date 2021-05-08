@@ -1,21 +1,24 @@
+sudo pacman -Syyuu
+
 sudo pacman -S \
     alacritty \
     alsa-firmware \
     alsa-utils \
     bemenu \
-    wayland-bemenu \
+    bemenu-wayland \
     brightnessctl \
-    code \
     discord \
+    firefox \
     fish \
     glfw-wayland \
     jq \
     neovim \
     openssh \
     otf-fira-mono \
-    postman-bin \
     qt5-wayland \
     rtorrent \
+    sl \
+    steam \
     sway \
     telegram-desktop \
     tmux \
@@ -32,6 +35,8 @@ yay -S \
     greetd-tuigreet \
     grimshot \
     nodenv \
-    nodenv-node-build
+    nodenv-node-build \
+    vscodium-bin \
+    vscodium-bin-marketplace
 
 install-general-pkgs
