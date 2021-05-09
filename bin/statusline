@@ -4,7 +4,7 @@ while true; do
 
     # Missing bluetooth. Maybe HDD usage.
 
-    uptime="up $(uptime | cut -d, -f1 | cut -d' ' -f4,5 | sed 's/^ *//g')"
+    uptime="upt $(uptime | cut -d, -f1 | cut -d' ' -f4,5 | sed 's/^ *//g')"
 
     audio_volume="$(amixer sget Master | tail -n1 | sed -r 's/.*\[([0-9]+%)\].*/\1/g')"
     audio_status="$(amixer sget Master | tail -n1 | sed -r 's/.*\[(on|off)\].*/\1/g')"
@@ -25,14 +25,14 @@ while true; do
     m="$(((m_max-m_avail)/1024))"
     memory="mem $((m*100/(m_max/1024)))% ${m}mb"
 
-    cpu="cpu $(cat /sys/class/thermal/thermal_zone8/temp | cut -b1,2)°C"
+    cpu="cpu $(acpi -t | sed -r 's/.* ([0-9.]+) degrees C.*/\1/g')°C"
 
     battery_charging=""
-    battery_status="$(cat /sys/class/power_supply/BAT0/status)"
-    if [[ "$battery_status" == "Charging" ]]; then
+    battery_status="$(acpi -b)"
+    if [[ "$battery_status" =~ "Charging" ]]; then
         battery_charging="↑"
     fi
-    battery="bat $(cat /sys/class/power_supply/BAT0/capacity)%$battery_charging"
+    battery="bat $(acpi -b | sed -r 's/.* ([0-9]+%).*/\1/g')$battery_charging"
 
     time=`date "+%Y-%m-%d %H:%M:%S"`
 

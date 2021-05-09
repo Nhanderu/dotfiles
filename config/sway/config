@@ -92,7 +92,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 # Devices.
 output * {
-    background #282828 solid_color
+    background ~/images/wallpaper.jpg fill #282828
 }
 input * {
     tap              enabled

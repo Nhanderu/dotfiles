@@ -1,6 +1,7 @@
 sudo pacman -Syyuu
 
 sudo pacman -S \
+    acpi \
     alacritty \
     alsa-firmware \
     alsa-utils \
@@ -15,6 +16,7 @@ sudo pacman -S \
     neovim \
     openssh \
     otf-fira-mono \
+    pulseaudio \
     qt5-wayland \
     rtorrent \
     sl \
