@@ -13,6 +13,7 @@ sudo pacman -S \
     fish \
     glfw-wayland \
     jq \
+    lutris \
     neovim \
     openssh \
     otf-fira-mono \
@@ -36,6 +37,7 @@ yay -S \
     greetd \
     greetd-tuigreet \
     grimshot \
+    mangohud \
     nodenv \
     nodenv-node-build \
     vscodium-bin \
