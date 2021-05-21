@@ -8,15 +8,16 @@ focus_follows_mouse no
 # System control.
 bindsym $mod+control+l exec swaylock
 bindsym $mod+control+c reload
-bindsym $mod+control+r exec swaynag -t warning -m 'Reboot?' -b yes 'systemctl reboot'
-bindsym $mod+control+q exec swaynag -t warning -m 'Poweroff?' -b yes 'systemctl poweroff'
-bindsym $mod+control+e exec swaynag -t warning -m 'Exit?' -b yes 'swaymsg exit'
+bindsym $mod+control+r exec reboot
+bindsym $mod+control+q exec poweroff
+bindsym $mod+control+e exec swaymsg exit
 
 # Software control.
-bindsym $mod+f      fullscreen toggle
-bindsym $mod+q      kill
-bindsym $mod+return exec alacritty
-bindsym $mod+space  exec bemenu-run
+bindsym $mod+f     fullscreen toggle
+bindsym $mod+q     kill
+bindsym $mod+t     exec alacritty
+bindsym $mod+b     exec firefox
+bindsym $mod+space exec bemenu-run
 
 # Window.
 bindsym alt+tab          focus next
@@ -91,9 +92,7 @@ bindsym XF86MonBrightnessUp   exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 # Devices.
-output * {
-    background ~/images/wallpaper.jpg fill #282828
-}
+output * background ~/images/wallpaper.jpg fill #282828
 input * {
     tap              enabled
     natural_scroll   enabled
