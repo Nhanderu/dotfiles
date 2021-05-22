@@ -20,6 +20,8 @@ while true; do
     fi
     net="net $net_status"
 
+    disk="ssd $(df -ah --output=pcent,used --total | tail -n 1 | sed 's/  / /g')"
+
     m_avail="$(cat /proc/meminfo | grep MemAvailable | sed 's/[^0-9]//g')"
     m_max="$(cat /proc/meminfo | grep MemTotal | sed 's/[^0-9]//g')"
     m="$(((m_max-m_avail)/1024))"
@@ -37,6 +39,6 @@ while true; do
     time=`date "+%Y-%m-%d %H:%M:%S"`
 
     sep="       "
-    echo "$uptime$sep$audio$sep$brightness$sep$net$sep$memory$sep$cpu$sep$battery$sep$time"
+    echo "$uptime$sep$audio$sep$brightness$sep$net$sep$disk$sep$memory$sep$cpu$sep$battery$sep$time"
     sleep 1
 done
