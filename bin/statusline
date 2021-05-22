@@ -4,41 +4,45 @@ while true; do
 
     # Missing bluetooth. Maybe HDD usage.
 
-    uptime="upt $(uptime | cut -d, -f1 | cut -d' ' -f4,5 | sed 's/^ *//g')"
+    uptime=" $(uptime | cut -d, -f1 | cut -d' ' -f4,5 | sed 's/^ *//g')"
 
     audio_volume="$(amixer sget Master | tail -n1 | sed -r 's/.*\[([0-9]+%)\].*/\1/g')"
     audio_status="$(amixer sget Master | tail -n1 | sed -r 's/.*\[(on|off)\].*/\1/g')"
-    audio="vol $audio_volume $audio_status"
+    if [[ "$audio_status" == "on" ]]; then
+        audio=" $audio_volume"
+    elif [[ "$audio_status" == "off" ]]; then
+        audio=" $audio_volume"
+    fi
 
     b="$(brightnessctl get)"
     b_max="$(brightnessctl max)"
-    brightness="bri $((b*100/b_max))%"
+    brightness=" $((b*100/b_max))%"
 
     net_status="$(iwctl station wlan0 show | grep State | sed 's/State//g' | tr -d ' ')"
     if [[ "$net_status" == "connected" ]]; then
         net_status="$(iwctl station wlan0 show | grep "Connected network" | sed 's/Connected network//g' | tr -d ' ')"
     fi
-    net="net $net_status"
+    net=" $net_status"
 
-    disk="ssd $(df -ah --output=pcent,used --total | tail -n 1 | sed 's/  / /g')"
+    disk="$(df -ah --output=pcent,used --total | tail -n 1 | sed 's/  / /g')"
 
     m_avail="$(cat /proc/meminfo | grep MemAvailable | sed 's/[^0-9]//g')"
     m_max="$(cat /proc/meminfo | grep MemTotal | sed 's/[^0-9]//g')"
     m="$(((m_max-m_avail)/1024))"
-    memory="mem $((m*100/(m_max/1024)))% ${m}mb"
+    memory=" $((m*100/(m_max/1024)))% ${m}mb"
 
-    cpu="cpu $(acpi -t | sed -r 's/.* ([0-9.]+) degrees C.*/\1/g')°C"
+    cpu=" $(acpi -t | sed -r 's/.* ([0-9.]+) degrees C.*/\1/g')°C"
 
-    battery_charging=""
+    battery_logo=""
     battery_status="$(acpi -b)"
-    if [[ "$battery_status" =~ "Charging" ]]; then
-        battery_charging="↑"
+    if [[ "$battery_status" =~ "Charging" || "$battery_status" =~ "Full" ]]; then
+        battery_logo=""
     fi
-    battery="bat $(acpi -b | sed -r 's/.* ([0-9]+%).*/\1/g')$battery_charging"
+    battery="$battery_logo $(acpi -b | sed -r 's/.* ([0-9]+%).*/\1/g')"
 
     time=`date "+%Y-%m-%d %H:%M:%S"`
 
-    sep="       "
+    sep="    "
     echo "$uptime$sep$audio$sep$brightness$sep$net$sep$disk$sep$memory$sep$cpu$sep$battery$sep$time"
     sleep 1
 done

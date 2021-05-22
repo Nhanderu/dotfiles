@@ -17,6 +17,7 @@ sudo pacman -S \
     neovim \
     openssh \
     otf-fira-mono \
+    otf-font-awesome \
     pulseaudio \
     qt5-wayland \
     rtorrent \
