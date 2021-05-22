@@ -16,7 +16,7 @@ while true; do
 
     b="$(brightnessctl get)"
     b_max="$(brightnessctl max)"
-    brightness=" $((b*100/b_max))%"
+    brightness=" $((b*100/b_max))%"
 
     net_status="$(iwctl station wlan0 show | grep State | sed 's/State//g' | tr -d ' ')"
     if [[ "$net_status" == "connected" ]]; then
