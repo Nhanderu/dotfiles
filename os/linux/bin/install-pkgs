@@ -1,6 +1,6 @@
-sudo pacman -Syyuu
+sudo aura -Syyu
 
-sudo pacman -S \
+sudo aura -S \
     acpi \
     alacritty \
     alsa-firmware \
@@ -33,7 +33,7 @@ sudo pacman -S \
     xorg-xwayland \
     zip
 
-yay -S \
+sudo aura -A \
     bisq \
     greetd \
     greetd-tuigreet \
