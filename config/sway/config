@@ -64,9 +64,10 @@ bindsym $mod+minus       scratchpad show
 # Style.
 font FiraMono-Regular 10
 hide_edge_borders --i3 both
-client.focused   #504945 #504945 #fdf4c1
-client.unfocused #282828 #282828 #fdf4c1
-client.urgent    #8f3f71 #8f3f71 #fdf4c1
+client.focused          #504945 #504945 #fdf4c1
+client.focused_inactive #504945 #504945 #fdf4c1
+client.unfocused        #282828 #282828 #fdf4c1
+client.urgent           #8f3f71 #8f3f71 #fdf4c1
 
 # Top bar.
 bar {
