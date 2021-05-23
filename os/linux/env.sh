@@ -5,9 +5,9 @@ export SDL_VIDEODRIVER=wayland
 
 export BEMENU_OPTS="\
     --ignorecase \
-    --bottom \
     --prompt=search \
     --fn \"FiraMono-Regular 10\" \
+    --line-height=20
     --tb=#282828 \
     --tf=#79740e \
     --fb=#282828 \

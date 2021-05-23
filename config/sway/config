@@ -57,22 +57,23 @@ bindsym control+print       exec grimshot copy area
 bindsym shift+print         exec grimshot save output
 bindsym shift+control+print exec grimshot save area
 
-# Scratchpad.
-bindsym $mod+shift+minus move scratchpad
-bindsym $mod+minus       scratchpad show
-
 # Style.
-font FiraMono-Regular 10
-hide_edge_borders --i3 both
+font                    FiraMono-Regular 10
+hide_edge_borders --i3  both
 client.focused          #504945 #504945 #fdf4c1
 client.focused_inactive #504945 #504945 #fdf4c1
 client.unfocused        #282828 #282828 #fdf4c1
 client.urgent           #8f3f71 #8f3f71 #fdf4c1
 
+# Other functions.
+popup_during_fullscreen ignore
+tiling_drag             disable
+
 # Top bar.
 bar {
     position       top
     status_command statusline
+    height         19
     colors {
         statusline         #fdf4c1
         background         #282828
@@ -89,7 +90,7 @@ bindsym XF86AudioLowerVolume exec amixer sset Master 10%-
 bindsym XF86AudioMute        exec amixer sset Master toggle
 
 # Brightness configuration.
-bindsym XF86MonBrightnessUp   exec brightnessctl set +10%
+bindsym XF86MonBrightnessUp   exec brightnessctl set 10%+
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 # Devices.
