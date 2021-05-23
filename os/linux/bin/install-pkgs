@@ -15,9 +15,11 @@ sudo aura -S \
     jq \
     lutris \
     neovim \
+    nnn \
     openssh \
     otf-fira-mono \
     otf-font-awesome \
+    pcmanfm \
     pulseaudio \
     qt5-wayland \
     rtorrent \
@@ -35,6 +37,7 @@ sudo aura -S \
 
 sudo aura -A \
     bisq \
+    brave-bin \
     greetd \
     greetd-tuigreet \
     grimshot \
