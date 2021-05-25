@@ -1,5 +1,5 @@
 export BROWSER=$(which firefox)
-export EDITOR=$(which nvim)
+export VISUAL=$(which nvim)
 export TERMINAL=$(which alacritty)
 
 export XDG_CONFIG_HOME="$HOME/.config"
