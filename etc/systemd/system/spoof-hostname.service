@@ -1,0 +1,12 @@
+[Unit]
+Description=Spoof hostname
+Wants=network-pre.target
+Before=network-pre.target
+
+[Service]
+ExecStart=/etc/systemd/scripts/spoof-hostname
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+__spoof_hostname() {
+	local old_hostname=$(hostnamectl --transient)
+  local new_hostname=$(head -n1 < <(fold -w7 < <(tr -cd 'a-z' < /dev/urandom)))
+  hostnamectl --transient set-hostname "$new_hostname"
+  sed -i "s/$old_hostname/$new_hostname/g" /etc/hosts
+}
+
+__spoof_hostname
