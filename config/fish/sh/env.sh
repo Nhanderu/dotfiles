@@ -12,7 +12,7 @@ export DOTFILES="$PROJ/nhanderu/dotfiles"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CARGO_NAME="Rafael Escobar"
-export CARGO_EMAIL="rafael@esco.dev"
+export CARGO_EMAIL="rescobar@pm.me"
 
 export GOENV_ROOT="$XDG_DATA_HOME/goenv"
 export GOENV_SHELL=fish

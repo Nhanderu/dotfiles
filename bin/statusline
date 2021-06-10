@@ -2,7 +2,7 @@
 
 while true; do
 
-    # Missing bluetooth. Maybe HDD usage.
+    # Missing bluetooth.
 
     uptime=" $(uptime | cut -d, -f1 | cut -d' ' -f4,5 | sed 's/^ *//g')"
 
