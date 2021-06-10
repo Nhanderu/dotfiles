@@ -17,6 +17,7 @@ bindsym $mod+f     fullscreen toggle
 bindsym $mod+q     kill
 bindsym $mod+t     exec alacritty
 bindsym $mod+b     exec firefox
+bindsym $mod+e     exec pcmanfm
 bindsym $mod+space exec bemenu-run
 
 # Window.
@@ -24,8 +25,8 @@ bindsym alt+tab          focus next
 bindsym shift+alt+tab    focus prev
 bindsym $mod+left        focus left
 bindsym $mod+right       focus right
-bindsym $mod+shift+left  move left
-bindsym $mod+shift+right move right
+bindsym $mod+shift+left  move  left
+bindsym $mod+shift+right move  right
 
 # Workspace focus.
 bindsym $mod+1 workspace 1
