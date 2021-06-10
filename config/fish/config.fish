@@ -27,8 +27,7 @@ end
 
 if status --is-interactive
 and test -z "$TMUX"
-    tmux attach
-    or tmux new-session
+    tmux new-session
     and exit
 end
 
