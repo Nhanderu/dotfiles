@@ -6,11 +6,11 @@ while true; do
 
     uptime=" $(uptime | cut -d, -f1 | cut -d' ' -f4,5 | sed 's/^ *//g')"
 
-    audio_volume="$(amixer sget Master | tail -n1 | sed -r 's/.*\[([0-9]+%)\].*/\1/g')"
-    audio_status="$(amixer sget Master | tail -n1 | sed -r 's/.*\[(on|off)\].*/\1/g')"
-    if [[ "$audio_status" == "on" ]]; then
+    audio_status="$(amixer sget Master | tail -n1)"
+    audio_volume="$(echo $audio_status | sed -r 's/.*\[([0-9]+%)\].*/\1/g')"
+    if [[ "$audio_status" =~ "[on]" ]]; then
         audio=" $audio_volume"
-    elif [[ "$audio_status" == "off" ]]; then
+    elif [[ "$audio_status" =~ "[off]" ]]; then
         audio=" $audio_volume"
     fi
 
