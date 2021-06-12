@@ -22,7 +22,9 @@ sudo aura -S \
     otf-fira-mono \
     otf-font-awesome \
     pcmanfm \
-    pulseaudio \
+    pipewire \
+    pipewire-alsa \
+    pipewire-pulse \
     qt5-wayland \
     rtorrent \
     sl \
