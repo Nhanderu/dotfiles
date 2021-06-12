@@ -48,6 +48,7 @@ sudo aura -A \
     mangohud \
     nodenv \
     nodenv-node-build \
+    swaylock-effects-git \
     vscodium-bin \
     vscodium-bin-marketplace
 
