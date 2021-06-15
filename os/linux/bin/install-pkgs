@@ -43,7 +43,7 @@ sudo aura -A \
     bisq \
     brave-bin \
     greetd \
-    greetd-tuigreet \
+    greetd-tuigreet-bin \
     grimshot \
     mangohud \
     nodenv \
