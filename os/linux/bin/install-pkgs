@@ -52,4 +52,12 @@ sudo aura -A \
     vscodium-bin \
     vscodium-bin-marketplace
 
+# Virt-manager.
+sudo aura -S \
+    iptables-nft \
+    openbsd-netcat \
+    bridge-utils \
+    dnsmasq \
+    virt-manager
+
 install-general-pkgs
