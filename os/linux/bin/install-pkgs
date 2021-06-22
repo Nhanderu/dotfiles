@@ -41,7 +41,6 @@ sudo aura -S \
 
 sudo aura -A \
     bisq \
-    brave-bin \
     greetd \
     greetd-tuigreet-bin \
     grimshot \
