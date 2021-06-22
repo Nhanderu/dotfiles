@@ -33,7 +33,7 @@ sudo aura -S \
     telegram-desktop \
     tmux \
     unzip \
-    vlc \
+    mpv \
     wayland \
     wl-clipboard \
     xorg-xwayland \
