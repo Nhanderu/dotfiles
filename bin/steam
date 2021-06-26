@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+HOME=$XDG_DATA_HOME/steam
+exec /usr/bin/steam "$@"
+
