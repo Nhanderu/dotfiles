@@ -16,7 +16,7 @@ bindsym $mod+control+e exec swaymsg exit
 bindsym $mod+f     fullscreen toggle
 bindsym $mod+q     kill
 bindsym $mod+t     exec alacritty
-bindsym $mod+b     exec firefox
+bindsym $mod+b     exec brave
 bindsym $mod+e     exec pcmanfm
 bindsym $mod+space exec bemenu-run
 

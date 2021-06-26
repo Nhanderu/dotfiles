@@ -1,0 +1,91 @@
+#!/usr/bin/env sh
+
+doas aura -Syyu
+
+doas aura -S \
+    acpi \
+    alacritty \
+    alsa-firmware \
+    alsa-utils \
+    bemenu \
+    bemenu-wayland \
+    bluez \
+    bluez-utils \
+    brightnessctl \
+    discord \
+    fish \
+    glfw-wayland \
+    jq \
+    lutris \
+    neovim \
+    nnn \
+    openssh \
+    otf-fira-mono \
+    otf-font-awesome \
+    pcmanfm \
+    pipewire \
+    pipewire-alsa \
+    pipewire-pulse \
+    qt5-wayland \
+    rtorrent \
+    rustup \
+    sl \
+    steam \
+    sway \
+    telegram-desktop \
+    the_silver_searcher \
+    unzip \
+    mpv \
+    wayland \
+    wl-clipboard \
+    xorg-xwayland \
+    zip
+
+doas aura -A \
+    bisq \
+    brave-bin \
+    greetd \
+    greetd-tuigreet-bin \
+    grimshot \
+    nodenv \
+    nodenv-node-build \
+    ponymix \
+    swaylock-effects-git \
+    vscodium-bin
+
+# Virt-manager.
+doas aura -S \
+    iptables-nft \
+    openbsd-netcat \
+    bridge-utils \
+    dnsmasq \
+    virt-manager
+
+curl -sL git.io/fisher | source
+test ! -d $GOENV_ROOT && git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
+
+fisher install \
+    jorgebucaran/fisher \
+    jorgebucaran/nvm.fish \
+    edc/bass
+
+cargo install \
+   cargo-edit
+
+codium --install-extension bmalehorn.vscode-fish
+codium --install-extension codezombiech.gitignore
+codium --install-extension donjayamanne.githistory
+codium --install-extension eriklynd.json-tools
+codium --install-extension golang.go
+codium --install-extension hashicorp.terraform
+codium --install-extension kumar-harsh.graphql-for-vscode
+codium --install-extension mrmlnc.vscode-pugbeautify
+codium --install-extension mrmlnc.vscode-puglint
+codium --install-extension ms-azuretools.vscode-docker
+codium --install-extension Poorchop.theme-darktooth
+codium --install-extension run-at-scale.terraform-doc-snippets
+codium --install-extension rust-lang.rust
+codium --install-extension sysoev.language-stylus
+codium --install-extension vadimcn.vscode-lldb
+codium --install-extension waderyan.gitblame
+codium --install-extension wmaurer.change-case

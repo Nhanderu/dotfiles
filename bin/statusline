@@ -2,8 +2,6 @@
 
 while true; do
 
-    # Missing bluetooth.
-
     uptime=" $(uptime | cut -d, -f1 | cut -d' ' -f4,5 | sed 's/^ *//g')"
 
     audio_status="$(amixer sget Master | tail -n1)"

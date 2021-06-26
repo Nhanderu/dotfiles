@@ -2,14 +2,13 @@
 
 sh_dir="$(dirname $0)/../config/fish/sh"
 source $sh_dir/env.sh
-source $sh_dir/os.sh
 
 cp -rp $DOTFILES/config/. "$XDG_CONFIG_HOME"
 doas cp -rp $DOTFILES/etc/. /etc
 find $DOTFILES/bin -type f -exec chmod +x {} \;
 
 if [[ "$1" == "-i" ]] || [[ "$1" == "--install" ]]; then
-    TMUX=1 install-pkgs
+    install-pkgs
 fi
 
 if ! grep -q $(which fish) /etc/shells; then

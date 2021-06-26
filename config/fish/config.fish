@@ -1,9 +1,4 @@
 bass source $__fish_config_dir/sh/env.sh
-bass source $__fish_config_dir/sh/os.sh
-
-alias tmux "tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
-alias pacman "pacman --color=auto"
-alias yay "yay --color=auto"
 
 set fish_color_normal white
 set fish_color_command af3a03 # orange
@@ -23,12 +18,6 @@ if status --is-login
 and test -z "$DISPLAY"
 and test (tty) = "/dev/tty1"
     exec sway
-end
-
-if status --is-interactive
-and test -z "$TMUX"
-    tmux new-session
-    and exit
 end
 
 if status --is-interactive
