@@ -22,6 +22,10 @@ export GOPATH="$XDG_DATA_HOME/go"
 export XDG_CURRENT_DESKTOP=wayland
 export SDL_VIDEODRIVER=wayland
 
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export LESSHISTFILE="$XDG_DATA_HOME/less/history"
+export LESSKEY="$XDG_CONFIG_HOME/less/keys"
+
 export BEMENU_OPTS="\
     --ignorecase \
     --prompt=search \
