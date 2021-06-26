@@ -19,6 +19,7 @@ doas aura -S \
     lutris \
     neovim \
     nnn \
+    nodejs \
     openssh \
     otf-fira-mono \
     otf-font-awesome \
@@ -47,8 +48,6 @@ doas aura -A \
     greetd \
     greetd-tuigreet-bin \
     grimshot \
-    nodenv \
-    nodenv-node-build \
     ponymix \
     swaylock-effects-git \
     vscodium-bin

@@ -22,5 +22,4 @@ end
 
 if status --is-interactive
     source (goenv init - | psub)
-    source (nodenv init - | psub)
 end
