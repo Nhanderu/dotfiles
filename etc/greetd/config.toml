@@ -4,3 +4,7 @@ vt = 1
 [default_session]
 command = "tuigreet --cmd 'fish --login' --remember --asterisks"
 user = "nhanderu"
+
+[initial_session]
+command = "fish --login"
+user = "nhanderu"
