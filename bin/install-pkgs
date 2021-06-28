@@ -1,12 +1,11 @@
 #!/usr/bin/env sh
 
-doas aura -Syyu
+doas paru -Syyu
 
-doas aura -S \
+doas paru -S \
     acpi \
     alacritty \
     alsa-firmware \
-    alsa-utils \
     bemenu \
     bemenu-wayland \
     bluez \
@@ -42,7 +41,7 @@ doas aura -S \
     xorg-xwayland \
     zip
 
-doas aura -A \
+doas paru -Sa \
     bisq \
     brave-bin \
     greetd \
@@ -53,7 +52,7 @@ doas aura -A \
     vscodium-bin
 
 # Virt-manager.
-doas aura -S \
+doas paru -S \
     iptables-nft \
     openbsd-netcat \
     bridge-utils \

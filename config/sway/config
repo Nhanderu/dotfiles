@@ -86,9 +86,12 @@ bar {
 }
 
 # Audio configuration.
-bindsym XF86AudioRaiseVolume exec amixer sset Master 10%+
-bindsym XF86AudioLowerVolume exec amixer sset Master 10%-
-bindsym XF86AudioMute        exec amixer sset Master toggle
+bindsym XF86AudioRaiseVolume       exec ponymix --output --max-volume=150 increase 10
+bindsym XF86AudioLowerVolume       exec ponymix --output decrease 10
+bindsym XF86AudioMute              exec ponymix --output toggle
+bindsym shift+XF86AudioRaiseVolume exec ponymix --input --max-volume=150 increase 10
+bindsym shift+XF86AudioLowerVolume exec ponymix --input decrease 10
+bindsym shift+XF86AudioMute        exec ponymix --input toggle
 
 # Brightness configuration.
 bindsym XF86MonBrightnessUp   exec brightnessctl set 10%+
