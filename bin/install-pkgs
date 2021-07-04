@@ -1,11 +1,10 @@
 #!/usr/bin/env sh
 
-doas paru -Syyu
+paru -Syyu
 
-doas paru -S \
+paru -Sr \
     acpi \
     alacritty \
-    alsa-firmware \
     bemenu \
     bemenu-wayland \
     bluez \
@@ -14,6 +13,7 @@ doas paru -S \
     discord \
     fish \
     glfw-wayland \
+    htop \
     jq \
     lutris \
     neovim \
@@ -23,9 +23,6 @@ doas paru -S \
     otf-fira-mono \
     otf-font-awesome \
     pcmanfm \
-    pipewire \
-    pipewire-alsa \
-    pipewire-pulse \
     qt5-wayland \
     rtorrent \
     rustup \
@@ -41,23 +38,32 @@ doas paru -S \
     xorg-xwayland \
     zip
 
-doas paru -Sa \
+paru -Sa \
     bisq \
     brave-bin \
     greetd \
     greetd-tuigreet-bin \
     grimshot \
-    ponymix \
     swaylock-effects-git \
     vscodium-bin
 
+# Sound.
+paru -Sr
+    alsa-firmware \
+    pipewire \
+    pipewire-alsa \
+    pipewire-pulse
+paru -Sa \
+    ponymix
+
 # Virt-manager.
-doas paru -S \
+paru -Sr \
     iptables-nft \
     openbsd-netcat \
     bridge-utils \
     dnsmasq \
-    virt-manager
+    virt-manager \
+    edk2-ovmf
 
 curl -sL git.io/fisher | source
 test ! -d $GOENV_ROOT && git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
