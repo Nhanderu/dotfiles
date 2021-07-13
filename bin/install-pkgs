@@ -22,7 +22,6 @@ paru -Sr \
     openssh \
     otf-fira-mono \
     otf-font-awesome \
-    pcmanfm \
     qt5-wayland \
     rtorrent \
     rustup \
